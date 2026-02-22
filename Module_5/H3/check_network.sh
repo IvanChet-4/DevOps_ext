@@ -64,7 +64,7 @@ if [[ ! $PREFIX =~ ^[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
     exit 1
 fi
 
-# Проверка октетов PREFIX
+# Октеты PREFIX
 IFS='.' read -r octet1 octet2 <<< "$PREFIX"
 
 # Первый октет PREFIX не может быть 0
