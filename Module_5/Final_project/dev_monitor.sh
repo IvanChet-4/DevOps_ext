@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# usb_monitor.sh – показывает список ввода-устройств и логирует новые.
+# dev_monitor.sh – показывает список ввода-устройств и логирует новые.
 # Использование:
-#   ./usb_monitor.sh           – список сейчас
-#   ./usb_monitor.sh --daemon  – демон, логирует только новые
+#   ./dev_monitor.sh           – список сейчас
+#   ./dev_monitor.sh --daemon  – демон, логирует только новые
 
 
 readonly LOG_FILE="/var/log/usb_monitor.log"
