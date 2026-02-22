@@ -8,15 +8,15 @@ crontab -e
 ```
 
 sudo apt install inotify-tools  
-sudo chmod +x /usr/local/bin/usb_monitor.sh  
-/usr/local/bin/usb_monitor.sh  
-sudo nano /etc/cron.d/usb_monitor  
+sudo chmod +x /usr/local/bin/dev_monitor.sh  
+/usr/local/bin/dev_monitor.sh  
+sudo nano /etc/cron.d/dev_monitor  
 
 ```
 
 #Опрос /proc/bus/input каждую минуту
-* * * * * root /usr/local/bin/usb_monitor.sh --daemon >> /var/log/usb_monitor.log 2>&1
+* * * * * root /usr/local/bin/dev_monitor.sh --daemon >> /var/log/dev_monitor.log 2>&1
 
 ```
 
-tail -f /var/log/usb_monitor.log
+tail -f /var/log/dev_monitor.log
