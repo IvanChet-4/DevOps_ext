@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# show-input-devices.sh
+# 
 # Показать содержимое /proc/bus/input/devices и список /dev/input/event*
 
 set -euo pipefail
@@ -21,4 +21,4 @@ ls -l /dev/input/event* 2>/dev/null || echo "Нет ни одного /dev/input
 
 print_section "Готово"
 
-
+====================================================
