@@ -62,14 +62,14 @@ done
 
 ```
 Сканирование с указанием только INTERFACE
-sudo ./check_network2.sh enp0s3
+sudo ./check_network_2.sh enp0s3
 
 Дополнительно, проверка скрипта:
-shellcheck ./check_network2.sh
+shellcheck ./check_network_2.sh
 ```
 
 
-### Задача решаемая скриптом check_network2.sh:
+### Задача решаемая скриптом check_network_2.sh:
 Измените скрипт созданный ранее check_network.sh так, чтобы:
 
 единственным параметром для ввода остался сетевой интерфейс;
