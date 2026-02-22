@@ -233,5 +233,69 @@ while true; do
   echo "Введите PID или q для выхода, t для таблицы: "
 done
 
+====================================================
+
+#!/usr/bin/env bash
+# Утилита просмотра информации о процессах из /proc
+# Логика: логируем только новые процессы + время выполнения
+
+LOG_FILE="${HOME}/proc_viewer.log"
+
+# Функция для логирования
+log_event() {
+    local message=$1
+    printf '%s  %s\n' "$(date '+%F %T')" "$message" >> "$LOG_FILE"
+}
+
+# Записываем время запуска скрипта
+log_event "=== Скрипт запущен ==="
+
+# Файл для хранения PID-ов предыдущего запуска
+PID_CACHE="/tmp/proc_viewer_cache_${USER}"
+touch "$PID_CACHE"
+
+# Получаем текущие PID
+mapfile -t CURRENT_PIDS < <(
+  find /proc -maxdepth 1 -type d -regex '.*/[0-9]+' -printf '%f\n' | sort -n
+)
+
+# Считываем предыдущие PID
+mapfile -t PREVIOUS_PIDS < "$PID_CACHE"
+
+# Функция для проверки новых процессов
+is_new_process() {
+    local pid=$1
+    for old_pid in "${PREVIOUS_PIDS[@]}"; do
+        [[ "$pid" == "$old_pid" ]] && return 1
+    done
+    return 0
+}
+
+# Логируем новые процессы
+for pid in "${CURRENT_PIDS[@]}"; do
+    if is_new_process "$pid"; then
+        exe_path="/proc/$pid/exe"
+        [[ -r "$exe_path" ]] && exe_name=$(basename "$(readlink -f "$exe_path")") || exe_name="<нет доступа>"
+        log_event "Новый процесс: PID=${pid} EXE=${exe_name}"
+    fi
+done
+
+# Сохраняем текущие PID для следующего запуска
+printf '%s\n' "${CURRENT_PIDS[@]}" > "$PID_CACHE"
+
+# (вывод списка процессов)
+# Выводим PID и соответствующий exe
+for pid in "${CURRENT_PIDS[@]}"; do
+  exe_path="/proc/$pid/exe"
+  if [[ -r "$exe_path" ]]; then
+    exe_name=$(basename "$(readlink -f "$exe_path")")
+  else
+    exe_name="<нет доступа>"
+  fi
+  printf '%-6s %s\n' "$pid" "$exe_name"
+done
+
+# Записываем время завершения
+log_event "=== Скрипт завершён ==="
 
 ====================================================
