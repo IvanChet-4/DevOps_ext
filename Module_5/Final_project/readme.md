@@ -15,7 +15,7 @@ sudo nano /etc/cron.d/dev_monitor
 ```
 
 #Опрос /proc/bus/input каждую минуту
-* * * * * root /usr/local/bin/dev_monitor.sh --daemon >> /var/log/dev_monitor.log 2>&1
+* * * * * root /usr/local/bin/dev_monitor.sh >> /var/log/dev_monitor.log 2>&1
 
 ```
 
