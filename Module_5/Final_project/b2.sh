@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 
+# dev_monitor.sh
 # Показать содержимое /proc/bus/input/devices и список /dev/input/event*
 
 set -euo pipefail
