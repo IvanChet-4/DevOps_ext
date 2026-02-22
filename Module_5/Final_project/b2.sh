@@ -116,7 +116,7 @@ print_section "Готово"
 set -euo pipefail
 
 # --- Конфигурация -------------------------------------------------------
-LOGFILE="$HOME/.local/share/dev_monitor.log"      # путь к лог-файлу
+LOGFILE="$HOME/.local/share/dev_monitor.log"
 mkdir -p "$(dirname "$LOGFILE")"
 
 # --- Функции ----------------------------------------------------------
@@ -128,20 +128,23 @@ print_section() {
 }
 
 log() {
-    # $1 — уровень (INFO|WARN|ERROR), $2 — сообщение
     printf '%s [%s] %s\n' "$(date '+%F %T')" "$1" "$2" >>"$LOGFILE"
 }
 
 # Снимок «подписи» устройства: Vendor, Product, Name
 device_key() {
+    # Работает со старой (g)awk без match(..., arr, group)
     awk -v RS='' '
     /Vendor/ && /Product/ && /Name/ {
-        match($0, /Vendor=([0-9a-f]+)/, v)
-        match($0, /Product=([0-9a-f]+)/, p)
-        match($0, /Name="([^"]+)"/, n)
-        print v[1]":"p[1]":"n[1]
-    }
-    ' "$1"
+        split("", p);                           # очистить массив
+        for (i=1; i<=NF; i++) {
+            if ($i ~ /Vendor=/) { sub(/.*Vendor=/, "", $i); p["V"]=$i }
+            if ($i ~ /Product=/) { sub(/.*Product=/, "", $i); p["P"]=$i }
+            if ($i ~ /Name=/)   { gsub(/^.*Name="|"$/, "", $i); p["N"]=$i }
+        }
+        if ("V" in p && "P" in p && "N" in p)
+            print p["V"]":"p["P"]":"p["N"]
+    }' "$1"
 }
 
 # --- Лог старта --------------------------------------------------------
@@ -155,17 +158,6 @@ print_section "Файлы устройств /dev/input/event*"
 ls -l /dev/input/event* 2>/dev/null || echo "Нет ни одного /dev/input/event*"
 
 print_section "Разбор устройств по столбцам"
-# Сначала соберём «подписи» текущих устройств
-TMP_CURRENT=$(mktemp)
-device_key /proc/bus/input/devices >"$TMP_CURRENT"
-
-# Затем загрузим уже сохранённые «подписи»
-KNOWN_FILE="$HOME/.local/share/known_devices.txt"
-touch "$KNOWN_FILE"
-TMP_KNOWN=$(mktemp)
-sort -u "$KNOWN_FILE" >"$TMP_KNOWN"
-
-# Построчное чтение и вывод
 while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     case "$line" in
@@ -195,12 +187,20 @@ while IFS= read -r line; do
     esac
 done < /proc/bus/input/devices
 
-# --- Определение новых устройств и логирование -------------------------
-print_section "Анализ новых устройств"
+# --- Анализ новых устройств -----------------------------------------
+TMP_CURRENT=$(mktemp)
+device_key /proc/bus/input/devices >"$TMP_CURRENT"
 
+KNOWN_FILE="$HOME/.local/share/known_devices.txt"
+touch "$KNOWN_FILE"
+TMP_KNOWN=$(mktemp)
+sort -u "$KNOWN_FILE" >"$TMP_KNOWN"
+
+print_section "Анализ новых устройств"
 NEW_COUNT=0
 while IFS= read -r key; do
-    if [[ -n "$key" ]] && ! grep -Fxq "$key" "$TMP_KNOWN"; then
+    [[ -z "$key" ]] && continue
+    if ! grep -Fxq "$key" "$TMP_KNOWN"; then
         echo "  → Новое устройство: $key"
         log INFO "Обнаружено новое устройство: $key"
         echo "$key" >>"$KNOWN_FILE"
@@ -212,6 +212,8 @@ if (( NEW_COUNT == 0 )); then
     echo "  Новых устройств не обнаружено"
     log INFO "Новых устройств не обнаружено"
 fi
+
+rm -f "$TMP_CURRENT" "$TMP_KNOWN"
 
 # --- Разбор /dev/input/event* -----------------------------------------
 print_section "Разбор /dev/input/event*"
