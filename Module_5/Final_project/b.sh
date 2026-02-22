@@ -110,3 +110,74 @@ while true; do
 done
 
 ====================================================
+
+#!/usr/bin/env bash
+# Утилита просмотра информации о процессах из /proc
+# … (весь предыдущий код остаётся без изменений) …
+
+# ------------------------------------------------------------------
+# 1) В начало скрипта, сразу после объявления CURRENT_PIDS,
+#    добавляем функцию-утилиту для безопасного чтения чисел из /proc
+# ------------------------------------------------------------------
+get_int() {
+  local val=$(cat "$1" 2>/dev/null | awk '{print $1}')
+  [[ $val =~ ^[0-9]+$ ]] && echo "$val" || echo 0
+}
+
+# ------------------------------------------------------------------
+# 2) В основной цикл while добавляем дополнительный пункт «t»
+# ------------------------------------------------------------------
+echo
+echo "Введите PID для просмотра детальной информации (q для выхода, t для таблицы): "
+
+while true; do
+  read -r TARGET_PID
+  case "$TARGET_PID" in
+    q) break ;;
+    t)
+      # Заголовок
+      printf '%-6s %-20s %10s %8s %8s %s\n' \
+             "PID" "Name" "VmRSS(KB)" "Threads" "FD-count" "CapBnd"
+      printf '%.0s-' {1..80}; echo
+
+      for pid in "${CURRENT_PIDS[@]}"; do
+        # Имя процесса
+        exe_path="/proc/$pid/exe"
+        if [[ -r "$exe_path" ]]; then
+          name=$(basename "$(readlink -f "$exe_path")")
+        else
+          name="<нет доступа>"
+        fi
+        # Если имя слишком длинное, обрежем
+        name=${name:0:20}
+
+        # VmRSS
+        vmrss=$(awk '/VmRSS:/ {print $2}' "/proc/$pid/status" 2>/dev/null || echo 0)
+
+        # Threads
+        threads=$(get_int "/proc/$pid/status" | awk '/Threads:/ {print $2}')
+
+        # FD-count
+        fd_dir="/proc/$pid/fd"
+        fd_count=0
+        [[ -d "$fd_dir" ]] && fd_count=$(ls -1 "$fd_dir" 2>/dev/null | wc -l)
+
+        # CapBnd (cap_last_cap для 64-битных систем)
+        capbnd=$(awk '/CapBnd:/ {print $2}' "/proc/$pid/status" 2>/dev/null || echo 0)
+
+        # Вывод строки таблицы
+        printf '%-6s %-20s %10s %8s %8s %s\n' \
+               "$pid" "$name" "$vmrss" "$threads" "$fd_count" "$capbnd"
+      done
+      echo
+      echo "Введите PID или q для выхода, t для таблицы: "
+      continue
+      ;;
+  esac
+
+  [[ ! " ${CURRENT_PIDS[*]} " =~ " $TARGET_PID " ]] && echo "Неверный PID" && continue
+
+  # … (весь предыдущий case остаётся без изменений) …
+done
+
+====================================================
