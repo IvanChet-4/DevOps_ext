@@ -1,4 +1,4 @@
-chmod +x /usr/local/bin/procmon.sh
+chmod +x /usr/local/bin/procmon.sh  
 crontab -e
 
 ```
@@ -7,10 +7,10 @@ crontab -e
 
 ```
 
-sudo apt install inotify-tools
-sudo chmod +x /usr/local/bin/usb_monitor.sh
-/usr/local/bin/usb_monitor.sh
-sudo nano /etc/cron.d/usb_monitor
+sudo apt install inotify-tools  
+sudo chmod +x /usr/local/bin/usb_monitor.sh  
+/usr/local/bin/usb_monitor.sh  
+sudo nano /etc/cron.d/usb_monitor  
 
 ```
 
