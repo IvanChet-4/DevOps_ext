@@ -39,7 +39,7 @@ mapfile -t CURRENT_PIDS < <(
 for pid in "${CURRENT_PIDS[@]}"; do
   exe_path="/proc/$pid/exe"
   if [[ -r "$exe_path" ]]; then
-    exe_name=$(readlink -f "$exe_path")
+    exe_name=$(basename "$(readlink -f "$exe_path")")
   else
     exe_name="<нет доступа>"
   fi
