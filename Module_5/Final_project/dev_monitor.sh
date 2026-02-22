@@ -5,8 +5,8 @@
 #   ./dev_monitor.sh --daemon  – демон, логирует только новые
 
 
-readonly LOG_FILE="/var/log/usb_monitor.log"
-readonly STATE_FILE="/var/run/usb_monitor_state"
+readonly LOG_FILE="/var/log/dev_monitor.log"
+readonly STATE_FILE="/var/run/dev_monitor_state"
 readonly INPUT_DIR="/proc/bus/input"
 
 # Убедиться, что директория существует
