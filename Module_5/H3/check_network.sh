@@ -9,9 +9,7 @@ fi
 # Функция для проверки IP-адреса
 validate_ip() {
     local ip=$1
-    if [[ ! $ip =~ ^[0-9]{1,3}$ ]] || [[ $ip -lt 0 ]] || [[ $ip -gt 255 ]]; then
-        return 1
-    fi
+    [[ $ip =~ ^(0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])$ ]] || return 1
     return 0
 }
 
@@ -63,6 +61,15 @@ HOST="${4:-}"
 # Проверка формата PREFIX (должен быть в формате xxx.xxx)
 if [[ ! $PREFIX =~ ^[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
     echo "Ошибка: PREFIX должен быть в формате xxx.xxx" >&2
+    exit 1
+fi
+
+# Проверка октетов PREFIX
+IFS='.' read -r octet1 octet2 <<< "$PREFIX"
+
+# Первый октет PREFIX не может быть 0
+if [[ $octet1 -eq 0 ]]; then
+    echo "Ошибка: Первый октет PREFIX не может быть 0" >&2
     exit 1
 fi
 
