@@ -1,58 +1,121 @@
 #!/usr/bin/env bash
-# dev_monitor.sh – показывает список ввода-устройств и логирует новые.
-# Использование:
-#   ./dev_monitor.sh           – список сейчас
-#   ./dev_monitor.sh --daemon  – демон, логирует только новые
+# dev_monitor.sh
+# Показать и «разобрать» содержимое /proc/bus/input/devices и список /dev/input/event*
+# С логированием: фиксируем время запуска и добавляются только новые устройства.
 
+set -euo pipefail
 
-readonly LOG_FILE="/var/log/dev_monitor.log"
-readonly STATE_FILE="/var/run/dev_monitor_state"
-readonly INPUT_DIR="/proc/bus/input"
+# --- Конфигурация -------------------------------------------------------
+LOGFILE="$HOME/.local/share/dev_monitor.log"
+mkdir -p "$(dirname "$LOGFILE")"
 
-# Убедиться, что директория существует
-[[ -d "$INPUT_DIR" ]] || { echo "Нет $INPUT_DIR"; exit 1; }
-
-# Получаем список устройств в формате "name  handlers  bus  vendor  product"
-get_devices() {
-    local file="$INPUT_DIR/devices"
-    awk '
-        /^N:/                { name=$0; sub(/^N: Name=/,"",name); gsub(/"/,"",name) }
-        /^H:/                { handlers=$0; sub(/^H: Handlers=/,"",handlers) }
-        /^B:/ && /BUS=001/  { bus=$0; sub(/^B: /,"",bus) }
-        /^S:/                { vendor=$0; sub(/^S: Sysfs=.+\/vendor/,"",vendor); sub(/ .*$/,"",vendor) }
-        /^S:/                { product=$0; sub(/^S: Sysfs=.*\/product/,"",product); sub(/ .*$/,"",product) }
-        /^$/                 { if (name!="") print name "|" handlers "|" bus "|" vendor "|" product; name=""; handlers=""; bus=""; vendor=""; product="" }
-    ' "$file"
+# --- Функции ----------------------------------------------------------
+print_section() {
+    echo
+    printf '%50s\n' | tr ' ' '-'
+    printf " %s\n" "$1"
+    printf '%50s\n' | tr ' ' '-'
 }
 
-# Записываем в лог только новые устройства
-log_new() {
-    local now
-    now=$(date '+%F %T')
-    while IFS= read -r line; do
-        if ! grep -qxF "$line" "$STATE_FILE" 2>/dev/null; then
-            echo "$line" >> "$STATE_FILE"
-            echo "[$now] NEW DEVICE: $line" >> "$LOG_FILE"
-        fi
-    done
+log() {
+    printf '%s [%s] %s\n' "$(date '+%F %T')" "$1" "$2" >>"$LOGFILE"
 }
 
-case "$1" in
-    --daemon)
-        echo "Запускаюсь в фоновом режиме (PID $$)"
-        # Очищаем старый state, чтобы не учитывать предыдущие устройства
-        > "$STATE_FILE"
-        # Первичное заполнение
-        get_devices | log_new
-        # Наблюдение за каталогом (только создание/удаление)
-        inotifywait -m -e create,delete "$INPUT_DIR" --format '%w%f' |
-        while read -r _; do
-            get_devices | log_new
-        done
-        ;;
-    *)
-        # Однократный вывод
-        echo "Текущие устройства ввода:"
-        get_devices | column -t -s '|'
-        ;;
-esac
+# Снимок «подписи» устройства: Vendor, Product, Name
+device_key() {
+    awk -v RS='' '
+    /Vendor/ && /Product/ && /Name/ {
+        split("", p);                           # очистить массив
+        for (i=1; i<=NF; i++) {
+            if ($i ~ /Vendor=/) { sub(/.*Vendor=/, "", $i); p["V"]=$i }
+            if ($i ~ /Product=/) { sub(/.*Product=/, "", $i); p["P"]=$i }
+            if ($i ~ /Name=/)   { gsub(/^.*Name="|"$/, "", $i); p["N"]=$i }
+        }
+        if ("V" in p && "P" in p && "N" in p)
+            print p["V"]":"p["P"]":"p["N"]
+    }' "$1"
+}
+
+# --- Лог старта --------------------------------------------------------
+log INFO "Скрипт запущен"
+
+# --- Основной код -----------------------------------------------------
+print_section "Устройства в /proc/bus/input/devices"
+cat /proc/bus/input/devices
+
+print_section "Файлы устройств /dev/input/event*"
+ls -l /dev/input/event* 2>/dev/null || echo "Нет ни одного /dev/input/event*"
+
+print_section "Разбор устройств по столбцам"
+while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    case "$line" in
+        I*)  bus=$(echo "$line" | awk '{print $2}')
+             vendor=$(echo "$line" | awk -F= '{print $2}' | awk '{print $1}')
+             product=$(echo "$line" | awk -F= '{print $3}' | awk '{print $1}')
+             version=$(echo "$line" | awk -F= '{print $4}')
+             echo "  Bus=$bus  Vendor=$vendor  Product=$product  Version=$version"
+             ;;
+        N*)  name=$(echo "$line" | sed 's/N: Name="//; s/"//')
+             echo "  Name: $name"
+             ;;
+        P*)  phys=$(echo "$line" | sed 's/P: Phys=//')
+             echo "  Phys: $phys"
+             ;;
+        S*)  sysprops=$(echo "$line" | sed 's/S: Sysfs=//')
+             echo "  Sysfs: $sysprops"
+             ;;
+        H*)  handlers=$(echo "$line" | sed 's/H: Handlers=//')
+             echo "  Handlers: $handlers"
+             ;;
+        B*)  key=$(echo "$line" | awk '{print $2}')
+             value=$(echo "$line" | cut -d' ' -f3-)
+             printf "  %-10s %s\n" "$key" "$value"
+             ;;
+        *)   echo "  $line" ;;
+    esac
+done < /proc/bus/input/devices
+
+# --- Анализ новых устройств -----------------------------------------
+TMP_CURRENT=$(mktemp)
+device_key /proc/bus/input/devices >"$TMP_CURRENT"
+
+KNOWN_FILE="$HOME/.local/share/known_devices.txt"
+touch "$KNOWN_FILE"
+TMP_KNOWN=$(mktemp)
+sort -u "$KNOWN_FILE" >"$TMP_KNOWN"
+
+print_section "Анализ новых устройств"
+NEW_COUNT=0
+while IFS= read -r key; do
+    [[ -z "$key" ]] && continue
+    if ! grep -Fxq "$key" "$TMP_KNOWN"; then
+        echo "  → Новое устройство: $key"
+        log INFO "Обнаружено новое устройство: $key"
+        echo "$key" >>"$KNOWN_FILE"
+        ((NEW_COUNT++))
+    fi
+done <"$TMP_CURRENT"
+
+if (( NEW_COUNT == 0 )); then
+    echo "  Новых устройств не обнаружено"
+    log INFO "Новых устройств не обнаружено"
+fi
+
+rm -f "$TMP_CURRENT" "$TMP_KNOWN"
+
+# --- Разбор /dev/input/event* -----------------------------------------
+print_section "Разбор /dev/input/event*"
+for dev in /dev/input/event*; do
+    [[ ! -e "$dev" ]] && continue
+    perms=$(stat -c '%A' "$dev")
+    owner=$(stat -c '%U:%G' "$dev")
+    major=$(stat -c '%t' "$dev")
+    minor=$(stat -c '%T' "$dev")
+    major=$((16#$major))
+    minor=$((16#$minor))
+    printf '%-20s %12s %10s %3d:%-3d\n' "$dev" "$perms" "$owner" "$major" "$minor"
+done
+
+print_section "Готово"
+log INFO "Скрипт завершён"
