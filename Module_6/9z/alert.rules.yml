@@ -8,4 +8,4 @@ groups:
       severity: critical
     annotations:
       summary: "High error rate on {{ $labels.instance }}"
-      description: "Error rate is {{ $humanize $value }}"
+      description: "Error rate is {{ humanize $value }}"
