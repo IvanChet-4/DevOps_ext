@@ -1,0 +1,1 @@
+Тестовый docker-compose.yml
