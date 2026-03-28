@@ -10,9 +10,9 @@ route:
 
 receivers:
 - name: 'default-receiver'
-  webhook_configs:
-  - url: 'http://your-webhook-url:port/path'
-    send_resolved: true
+#  webhook_configs:
+#  - url: 'http://your-webhook-url:port/path'
+#    send_resolved: true
 
 inhibit_rules:
 - source_match:
