@@ -5,18 +5,19 @@ services:
     image: grafana/grafana:latest
     container_name: chet-i-s-netology-grafana
     ports:
-      - "80:3000"
+      - "88:3000"
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana:/etc/grafana/provisioning
-      - grafana_custom:/etc/grafana/custom
+      - grafana_provisioning:/etc/grafana/provisioning
+      - ./grafana/custom.ini:/etc/grafana/grafana.ini:ro
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=false
       - GF_AUTH_DISABLE_LOGIN_FORM=false
       - GF_SERVER_HTTP_PORT=3000
-      - GF_CUSTOM_INI_PATH=/etc/grafana/custom/custom.ini
+      - GF_CUSTOM_INI_PATH=/etc/grafana/grafana.ini
     restart: unless-stopped
 
 volumes:
   grafana_data:
-  grafana_custom:
+  grafana_provisioning:
+  grafana:
