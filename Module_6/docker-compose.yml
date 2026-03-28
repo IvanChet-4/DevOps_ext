@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  chet-i-s-busybox:
+    image: busybox
+    command: sh -c "echo 'Hello from BusyBox!' && sleep infinity"
+    volumes:
+      - ./shared:/shared:ro
+    networks:
+      chet-i-s-my-netology-hw:
+        ipv4_address: 10.5.0.10
+
+  chet-i-s-nginx:
+    image: nginx
+    ports:
+      - "8087:87"
+    volumes:
+      - ./shared:/usr/share/nginx/html:ro
+    networks:
+      chet-i-s-my-netology-hw:
+        ipv4_address: 10.5.0.20
+
+networks:
+  chet-i-s-my-netology-hw:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
