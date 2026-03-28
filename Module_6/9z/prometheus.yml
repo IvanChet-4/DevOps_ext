@@ -9,13 +9,13 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-          - chet-i-s-netology-alertmanager:9093  # Используйте имя сервиса из docker-compose
+          - chet-i-s-netology-alertmanager:9093
 
 rule_files:
   - /etc/prometheus/alert.rules.yml
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-rule_files:
+#rule_files:
   # - "first_rules.yml"
   # - "second_rules.yml"
 
