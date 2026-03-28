@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+        location /test {
+            add_header Content-Type text/plain;
+            return 200 'Hello from k8s';
+        }
+    }
