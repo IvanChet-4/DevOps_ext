@@ -31,12 +31,12 @@ scrape_configs:
  #   static_configs:
  #     - targets: ["pushgateway:9091"]
 
-  - job_name: 'pushgateway'
+  - job_name: 'chet-i-s-netology-postgres'
     honor_labels: true
     static_configs:
-      - targets: ["pushgateway:9091"]
+      - targets: ["chet-i-s-netology-postgres:5432"]
 
-  - job_name: 'pushgateway'
+  - job_name: 'chet-i-s-netology-grafana'
     honor_labels: true
     static_configs:
-      - targets: ["pushgateway:9091"]
+      - targets: ["chet-i-s-netology-grafana:3000"]
