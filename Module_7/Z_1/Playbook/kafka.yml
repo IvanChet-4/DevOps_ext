@@ -1,0 +1,46 @@
+---
+- name: Download and extract Apache Kafka archive
+  hosts: webservers
+  become: yes
+  vars:
+    kafka_version: "3.7.0"
+    download_url: "https://archive.apache.org/dist/kafka/{{ kafka_version }}/kafka_2.13-{{ kafka_version }}.tgz"
+    extract_dir: "/opt/kafka"
+    archive_path: "/tmp/kafka_2.13-{{ kafka_version }}.tgz"
+
+  tasks:
+    - name: Install required packages (wget, tar)
+      ansible.builtin.apt:
+        name:
+          - wget
+          - tar
+        state: present
+        update_cache: yes
+      when: ansible_os_family == 'Debian'
+
+    - name: Install required packages (wget, tar) for RHEL
+      ansible.builtin.yum:
+        name:
+          - wget
+          - tar
+        state: present
+      when: ansible_os_family == 'RedHat'
+
+    - name: Create directory for extraction
+      ansible.builtin.file:
+        path: "{{ extract_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Download Kafka archive
+      ansible.builtin.get_url:
+        url: "{{ download_url }}"
+        dest: "{{ archive_path }}"
+        mode: '0644'
+
+    - name: Extract Kafka archive
+      ansible.builtin.unarchive:
+        src: "{{ archive_path }}"
+        dest: "{{ extract_dir }}"
+        remote_src: yes
+        extra_opts: [--strip-components=1]
