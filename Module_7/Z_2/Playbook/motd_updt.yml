@@ -2,18 +2,17 @@
 - name: Change system motd (Message of the Day)
   hosts: webservers
   become: yes
-  vars:
-    custom_motd: |
-      ______________________________________
-      |                                      |
-      |   Welcome to the Custom Ansible MOTD |
-      |   System managed by Ansible          |
-      |   Last updated: {{ ansible_date_time.iso8601 }} |
-      |______________________________________|
-
   tasks:
     - name: Update /etc/motd
       ansible.builtin.copy:
         dest: /etc/motd
-        content: "{{ custom_motd }}"
+        content: |
+          ______________________________________
+
+          Welcome to {{ ansible_hostname }}!
+          Server IP: {{ ansible_default_ipv4.address | default(ansible_host) }}
+
+          Have a great day, System Administrator!
+          ______________________________________
+          Last updated: {{ ansible_date_time.iso8601 }}
         mode: '0644'
