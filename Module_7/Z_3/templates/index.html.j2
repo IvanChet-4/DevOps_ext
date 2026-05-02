@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Information</title>
+</head>
+<body>
+    <h1>System Information</h1>
+    <p><strong>Hostname:</strong> {{ ansible_facts.hostname }}</p>
+    <p><strong>IP Address:</strong> {{ ansible_facts.default_ipv4.address }}</p>
+    <p><strong>CPU:</strong> {{ ansible_facts.processor_vcpus }} vCPUs ({{ ansible_facts.processor[1] }})</p>
+    <p><strong>RAM:</strong> {{ ansible_facts.memtotal_mb }} MB</p>
+    <p><strong>First Disk:</strong> {{ ansible_facts.devices.sda.size }}</p>
+    <p><strong>OS:</strong> {{ ansible_facts.distribution }} {{ ansible_facts.distribution_version }}</p>
+</body>
+</html>
