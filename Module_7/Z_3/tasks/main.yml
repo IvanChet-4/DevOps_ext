@@ -1,0 +1,40 @@
+- name: Install Apache
+  ansible.builtin.package:
+    name: "{{ apache_package_name }}"
+    state: present
+
+- name: Configure index.html with system info
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ apache_docroot }}/index.html"
+    mode: '0644'
+  notify: restart apache
+
+- name: Ensure Apache is running and enabled
+  ansible.builtin.service:
+    name: "{{ apache_service_name }}"
+    state: started
+    enabled: yes
+
+- name: Open port 80 in firewalld (if applicable)
+  ansible.posix.firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+  when: ansible_facts.os_family == 'RedHat' and ansible_facts.services['firewalld.service'] is defined
+
+- name: Ensure port 80 is open in ufw (if applicable)
+  community.general.ufw:
+    rule: allow
+    port: '80'
+  when: ansible_facts.os_family == 'Debian'
+
+- name: Check if Apache is serving the page
+  ansible.builtin.uri:
+    url: "http://{{ ansible_facts.default_ipv4.address }}"
+    status_code: 200
+  register: result
+  until: result.status == 200
+  retries: 5
+  delay: 3
