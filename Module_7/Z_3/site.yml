@@ -1,0 +1,5 @@
+- name: Deploy Apache with system info
+  hosts: all
+  become: yes
+  roles:
+    - apache_role
