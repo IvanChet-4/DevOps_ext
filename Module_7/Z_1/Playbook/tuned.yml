@@ -1,0 +1,25 @@
+---
+- name: Install and configure tuned
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Install tuned package
+      ansible.builtin.package:
+        name: tuned
+        state: present
+
+    - name: Enable and start tuned service
+      ansible.builtin.systemd:
+        name: tuned
+        enabled: yes
+        state: started
+
+    - name: Verify tuned is running
+      ansible.builtin.command: systemctl is-active tuned
+      register: tuned_status
+      changed_when: false
+
+    - name: Display tuned status
+      ansible.builtin.debug:
+        var: tuned_status.stdout
