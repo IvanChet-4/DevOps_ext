@@ -1,0 +1,29 @@
+---
+- name: Install and start PostgreSQL
+  hosts: db-server
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install PostgreSQL
+      apt:
+        name:
+          - postgresql
+          - postgresql-contrib
+        state: present
+
+    - name: Start and enable PostgreSQL
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes
+
+    - name: Check PostgreSQL status
+      command: systemctl is-active postgresql
+      register: pg_status
+
+    - name: Display PostgreSQL status
+      debug:
+        msg: "PostgreSQL is {{ pg_status.stdout }}"
