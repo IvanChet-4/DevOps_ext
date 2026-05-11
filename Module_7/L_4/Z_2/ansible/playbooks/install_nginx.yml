@@ -1,0 +1,25 @@
+---
+- name: Install and start Nginx on web servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start and enable Nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Create test page
+      copy:
+        content: |
+          <h1>Hello from {{ inventory_hostname }}!</h1>
+        dest: /var/www/html/index.html
