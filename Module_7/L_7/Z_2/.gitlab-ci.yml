@@ -1,0 +1,23 @@
+stages:
+  - test
+  - build
+
+# Этап тестирования кода
+test_job:
+  stage: test
+  image: golang:1.21-alpine
+  script:
+    - echo "Running tests..."
+    - go test -v ./... || true
+
+# Этап компиляции приложения
+build_job:
+  stage: build
+  image: golang:1.21-alpine
+  script:
+    - echo "Compiling the application..."
+    - mkdir -p build
+    - go build -o build/app main.go
+  artifacts:
+    paths:
+      - build/
