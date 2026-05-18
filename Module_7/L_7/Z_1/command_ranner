@@ -1,0 +1,7 @@
+  sudo docker exec -it proj_2-runner-1 gitlab-runner register \
+  --non-interactive \
+  --url "http://web/" \
+  --registration-token "glrt-wHLzB5B..." \
+  --executor "docker" \
+  --docker-image "golang:1.21-alpine" \
+  --description "docker-runner"
