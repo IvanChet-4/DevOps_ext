@@ -178,6 +178,13 @@ and last(/ichetverkin-custom/system.cpu.load[all,avg15])&gt;0</expression>
                     </triggers>
                 </item>
                 <item>
+                    <uuid>c9a411f558504a639dc3a4682caeba98</uuid>
+                    <name>ЦПУ%</name>
+                    <key>system.cpu.util[,,avg1]</key>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                </item>
+                <item>
                     <uuid>47dcfef680ad497fb994e43bb08b5614</uuid>
                     <name>CPU guest time</name>
                     <key>system.cpu.util[,guest]</key>
@@ -347,6 +354,13 @@ See also Appendixes in Zabbix Documentation about parameters of the `vm.memory.s
                             <value>memory</value>
                         </tag>
                     </tags>
+                </item>
+                <item>
+                    <uuid>79b4029477de4ba8bc3a21c62a040576</uuid>
+                    <name>РАМ%</name>
+                    <key>vm.memory.size[pused]</key>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
                 </item>
                 <item>
                     <uuid>3b1f5c04b84b4717ae1683f6fd8bed21</uuid>
