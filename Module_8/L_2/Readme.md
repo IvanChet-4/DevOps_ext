@@ -30,3 +30,5 @@
 - apt install zabbix-agent2-plugin-postgresql   
 - systemctl restart zabbix-agent2  
 - systemctl enable zabbix-agent2   
+
+<img width="1624" height="738" alt="image" src="https://github.com/user-attachments/assets/19db22d6-430f-4a64-9491-9290bba1d909" />  
