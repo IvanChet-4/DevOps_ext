@@ -41,3 +41,6 @@
   
 <img width="1198" height="644" alt="image" src="https://github.com/user-attachments/assets/d6764ab2-d944-438d-a8a5-5b8638666bc0" />  
   
+# Задание 6  
+
+[Скрипт](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_8/L_3/user_info.sh)
