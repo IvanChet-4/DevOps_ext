@@ -27,8 +27,10 @@
 - dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb    
 - apt update    
 - apt install zabbix-agent2
-- apt install zabbix-agent2-plugin-postgresql   
+- apt install zabbix-agent2-plugin-postgresql
+- nano /etc/zabbix/zabbix_agent2.conf   
 - systemctl restart zabbix-agent2  
-- systemctl enable zabbix-agent2   
+- systemctl enable zabbix-agent2
+
 
 <img width="1624" height="738" alt="image" src="https://github.com/user-attachments/assets/19db22d6-430f-4a64-9491-9290bba1d909" />  
