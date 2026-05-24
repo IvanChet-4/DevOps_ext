@@ -49,3 +49,7 @@ nano /etc/zabbix/zabbix_agent2.conf
 UserParameter=custom.info[*],/etc/zabbix/user_info.sh $1  
    
 <img width="1642" height="825" alt="image" src="https://github.com/user-attachments/assets/83e150be-1a49-42e0-8ab2-25c25fbc8399" />  
+  
+# Задание 8  
+  
+<img width="1736" height="643" alt="image" src="https://github.com/user-attachments/assets/670d0900-d3bf-4184-a788-6d058b8324e4" />  
