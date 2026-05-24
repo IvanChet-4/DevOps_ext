@@ -34,3 +34,7 @@
 
 
 <img width="1624" height="738" alt="image" src="https://github.com/user-attachments/assets/19db22d6-430f-4a64-9491-9290bba1d909" />  
+  
+# Задание 3  
+  
+<img width="1637" height="778" alt="image" src="https://github.com/user-attachments/assets/05494e45-adb6-4c3f-832f-c58a73a4d90c" />
