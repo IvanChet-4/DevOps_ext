@@ -45,4 +45,7 @@
   
 [Скрипт](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_8/L_3/user_info.sh)  
   
+nano /etc/zabbix/zabbix_agent2.conf  
+UserParameter=custom.info[*],/etc/zabbix/user_info.sh $1  
+   
 <img width="1642" height="825" alt="image" src="https://github.com/user-attachments/assets/83e150be-1a49-42e0-8ab2-25c25fbc8399" />  
