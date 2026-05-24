@@ -30,3 +30,7 @@
 # Задание 4  
   
 <img width="1849" height="566" alt="image" src="https://github.com/user-attachments/assets/5fbdba06-d580-43aa-84cb-ca10b53101ec" />  
+  
+# Задание 5  
+  
+<img width="1226" height="615" alt="image" src="https://github.com/user-attachments/assets/aa490d07-d1e0-4692-90e6-01efb4e51dec" />  
