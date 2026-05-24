@@ -38,3 +38,6 @@
 # Задание 3  
   
 <img width="1637" height="778" alt="image" src="https://github.com/user-attachments/assets/05494e45-adb6-4c3f-832f-c58a73a4d90c" />
+  
+<img width="1832" height="545" alt="image" src="https://github.com/user-attachments/assets/f1ec7a27-a533-4490-b9ea-872bd0b63251" />  
+
