@@ -20,6 +20,32 @@
             </groups>
             <items>
                 <item>
+                    <uuid>22cc489f6d754abe8805bb7250b4bf99</uuid>
+                    <name>ФИО</name>
+                    <key>custom.info[1]</key>
+                    <value_type>TEXT</value_type>
+                    <trends>0</trends>
+                    <tags>
+                        <tag>
+                            <tag>Z6</tag>
+                            <value>Z6</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6cc60d30c057414185bbb93f495dd46b</uuid>
+                    <name>Текущая дата</name>
+                    <key>custom.info[2]</key>
+                    <value_type>CHAR</value_type>
+                    <trends>0</trends>
+                    <tags>
+                        <tag>
+                            <tag>Z6</tag>
+                            <value>Z6</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
                     <uuid>d8dc537d0f9847b6b8c085b60a336f71</uuid>
                     <name>ЦПУ%</name>
                     <key>system.cpu.util[,,avg1]</key>
