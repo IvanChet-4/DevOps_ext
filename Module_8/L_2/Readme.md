@@ -28,3 +28,5 @@
 - apt update    
 - apt install zabbix-agent2
 - apt install zabbix-agent2-plugin-postgresql   
+- systemctl restart zabbix-agent2  
+- systemctl enable zabbix-agent2   
