@@ -33,4 +33,6 @@
   
 # Задание 5  
   
+<img width="1441" height="459" alt="image" src="https://github.com/user-attachments/assets/a5613bd5-30f2-4b24-98c2-3ac0cf07e29b" />  
+  
 <img width="1226" height="615" alt="image" src="https://github.com/user-attachments/assets/aa490d07-d1e0-4692-90e6-01efb4e51dec" />  
