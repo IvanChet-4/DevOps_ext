@@ -44,6 +44,7 @@ Monitoring > Latest data
 
 <img width="1870" height="923" alt="image" src="https://github.com/user-attachments/assets/a7293e43-c5d0-4db8-b1e0-b91d870ecc6f" />
 
+<img width="1653" height="819" alt="image" src="https://github.com/user-attachments/assets/5cf54002-227b-4f9c-89af-2aa195fc81ed" />
 
 
   
