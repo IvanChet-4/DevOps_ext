@@ -34,6 +34,17 @@
 
 
 <img width="1624" height="738" alt="image" src="https://github.com/user-attachments/assets/19db22d6-430f-4a64-9491-9290bba1d909" />  
+
+<img width="1908" height="791" alt="image" src="https://github.com/user-attachments/assets/91721b6d-4978-42fd-9b7b-0070bb67ccbf" />
+
+<img width="824" height="588" alt="image" src="https://github.com/user-attachments/assets/d595b6fa-5b48-4c4f-bd96-993c746b623e" />
+
+<img width="1834" height="943" alt="image" src="https://github.com/user-attachments/assets/ee8dd372-c339-4169-9c7f-a44320553249" />
+
+<img width="1870" height="923" alt="image" src="https://github.com/user-attachments/assets/a7293e43-c5d0-4db8-b1e0-b91d870ecc6f" />
+
+
+
   
 # Задание 3  
   
