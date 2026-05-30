@@ -33,7 +33,6 @@
 - systemctl enable zabbix-agent2
 
 
-<img width="1624" height="738" alt="image" src="https://github.com/user-attachments/assets/19db22d6-430f-4a64-9491-9290bba1d909" />  
 
 <img width="1908" height="791" alt="image" src="https://github.com/user-attachments/assets/91721b6d-4978-42fd-9b7b-0070bb67ccbf" />
 
