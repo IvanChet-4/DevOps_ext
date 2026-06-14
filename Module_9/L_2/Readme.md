@@ -37,8 +37,7 @@ sudo apt update
 sudo apt install haproxy -y  
 sudo nano /etc/haproxy/haproxy.cfg  
 ```
-
-Останавливаем haproxy, меняем конфиг haproxy.cfg и запускаем.  
+  
 Конфигурационный файл [/etc/haproxy/haproxy.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_2/haproxy.cfg)  
 
 #### Проверка:  
@@ -69,6 +68,7 @@ echo "Response from Python Server 3" > index.html
 python3 -m http.server 8003  
 ```
 
+Останавливаем haproxy, меняем конфиг haproxy.cfg и запускаем.
 Конфигурационный файл [/etc/haproxy/haproxy.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_2/z2_haproxy.cfg)  
 
 #### Проверка:  
