@@ -95,4 +95,4 @@
 
 *3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
 
-[//] https://github.com/netology-code/sflt-homeworks/blob/main/4.md
+<!-- [//] https://github.com/netology-code/sflt-homeworks/blob/main/4.md -->
