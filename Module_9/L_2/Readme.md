@@ -59,7 +59,7 @@ sudo nano /etc/haproxy/haproxy.cfg
 #### Решение
 
 **Важно! В /etc/hosts у меня настроен '127.0.1.1 user-pc1' вместо example.local.**  
-Поэтому в конфиге используется не hdr(host), а hdr_dom(host).
+Поэтому в конфиге haproxy.cfg используется не hdr(host), а hdr_dom(host).
 
 Запуск сервера 3  
 
