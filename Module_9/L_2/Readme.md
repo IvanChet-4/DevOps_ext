@@ -40,7 +40,7 @@ sudo nano /etc/haproxy/haproxy.cfg
 
 Конфигурационный файл [/etc/haproxy/haproxy.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_2/haproxy.cfg)  
 
-#### Проверка:
+#### Проверка:  
 
 ```
  curl http://127.0.0.1:8022  
@@ -64,6 +64,14 @@ mkdir server3 && cd server3
 echo "Response from Python Server 3" > index.html  
 python3 -m http.server 8003  
 ```
+
+#### Проверка:  
+
+```
+for i in {1..20}; do curl http:/user-pc1:8022; done  
+```
+
+<img width="997" height="803" alt="image" src="https://github.com/user-attachments/assets/14f03ae0-b23d-436d-b002-a20c027fe996" />
 
 ---
 
