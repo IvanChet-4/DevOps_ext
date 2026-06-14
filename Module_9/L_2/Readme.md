@@ -63,10 +63,15 @@ sudo apt install haproxy -y
 sudo nano /etc/haproxy/haproxy.cfg  
 ```
 
+Конфигурационный файл 
 
+#### Проверка:
 
+```
+ curl http://127.0.0.1:8022  
+```
 
-![Тест]<img width="1606" height="359" alt="image" src="https://github.com/user-attachments/assets/a1223f32-9c73-4afc-8445-e80a4d6b9571" />
+<img width="1606" height="359" alt="image" src="https://github.com/user-attachments/assets/a1223f32-9c73-4afc-8445-e80a4d6b9571" />
 
 
 ### Задание 2
