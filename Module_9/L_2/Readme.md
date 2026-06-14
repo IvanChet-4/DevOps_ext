@@ -65,6 +65,8 @@ echo "Response from Python Server 3" > index.html
 python3 -m http.server 8003  
 ```
 
+Конфигурационный файл [/etc/haproxy/haproxy.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_2/z2_haproxy.cfg)  
+
 #### Проверка:  
 
 ```
