@@ -41,14 +41,24 @@
 - Настройте балансировку Round-robin на 4 уровне.
 - На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
 #### Решение
-Запуск сервера 1
-mkdir server1 && cd server1
-echo "Response from Python Server 1" > index.html
-python3 -m http.server 8001
-Запуск сервера 2
-mkdir server2 && cd server2
-echo "Response from Python Server 2" > index.html
-python3 -m http.server 8002
+Запуск сервера 1  
+
+```
+mkdir server1 && cd server1  
+echo "Response from Python Server 1" > index.html  
+python3 -m http.server 8001  
+```
+
+Запуск сервера 2  
+
+```
+mkdir server2 && cd server2  
+echo "Response from Python Server 2" > index.html  
+python3 -m http.server 8002  
+```
+
+sudo apt update
+sudo apt install haproxy -y
 
 ### Задание 2
 - Запустите три simple python сервера на своей виртуальной машине на разных портах
