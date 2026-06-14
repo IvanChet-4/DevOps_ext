@@ -56,9 +56,12 @@ mkdir server2 && cd server2
 echo "Response from Python Server 2" > index.html  
 python3 -m http.server 8002  
 ```
-
-sudo apt update
-sudo apt install haproxy -y
+  
+```
+sudo apt update  
+sudo apt install haproxy -y  
+sudo nano /etc/haproxy/haproxy.cfg  
+```
 
 ### Задание 2
 - Запустите три simple python сервера на своей виртуальной машине на разных портах
