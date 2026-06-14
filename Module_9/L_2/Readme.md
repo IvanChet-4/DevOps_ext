@@ -57,7 +57,7 @@ sudo nano /etc/haproxy/haproxy.cfg
 
 #### Решение
 
-Важно! В /etc/hosts у меня настроен '127.0.1.1 user-pc1' вместо example.local.  
+**Важно! В /etc/hosts у меня настроен '127.0.1.1 user-pc1' вместо example.local.**  
 
 Запуск сервера 3  
 
