@@ -63,6 +63,12 @@ sudo apt install haproxy -y
 sudo nano /etc/haproxy/haproxy.cfg  
 ```
 
+
+
+
+![Тест]<img width="1606" height="359" alt="image" src="https://github.com/user-attachments/assets/a1223f32-9c73-4afc-8445-e80a4d6b9571" />
+
+
 ### Задание 2
 - Запустите три simple python сервера на своей виртуальной машине на разных портах
 - Настройте балансировку Weighted Round Robin на 7 уровне, чтобы первый сервер имел вес 2, второй - 3, а третий - 4
