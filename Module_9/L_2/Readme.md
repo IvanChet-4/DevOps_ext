@@ -68,13 +68,13 @@ python3 -m http.server 8003
 #### Проверка:  
 
 ```
-for i in {1..20}; do curl http:/user-pc1:8022; done  
+for i in {1..20}; do curl http://user-pc1:8022; done  
 ```
-
-<img width="997" height="803" alt="image" src="https://github.com/user-attachments/assets/14f03ae0-b23d-436d-b002-a20c027fe996" />
+  
+<img width="1101" height="689" alt="image" src="https://github.com/user-attachments/assets/67456b65-55ea-4e94-a5dc-f5ae58b854dd" />
 
 ---
-
+  
 ## Задания со звёздочкой*
 Эти задания дополнительные. Их можно не выполнять. На зачёт это не повлияет. Вы можете их выполнить, если хотите глубже разобраться в материале.
 
