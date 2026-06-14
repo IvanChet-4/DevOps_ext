@@ -5,7 +5,6 @@
 1. Настраивать балансировку с помощью HAProxy
 2. Настраивать связку HAProxy + Nginx
 
-
 ------
 
 ### Задание 1
@@ -13,6 +12,7 @@
 - Установите и настройте HAProxy, воспользуйтесь материалами к лекции по [ссылке](https://github.com/netology-code/sflt-homeworks/tree/main/2)
 - Настройте балансировку Round-robin на 4 уровне.
 - На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
+
 #### Решение
 Запуск сервера 1  
 
@@ -29,6 +29,8 @@ mkdir server2 && cd server2
 echo "Response from Python Server 2" > index.html  
 python3 -m http.server 8002  
 ```
+
+Установка и настройка haproxy 
   
 ```
 sudo apt update  
@@ -53,7 +55,15 @@ sudo nano /etc/haproxy/haproxy.cfg
 - HAproxy должен балансировать только тот http-трафик, который адресован домену example.local
 - На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy c использованием домена example.local и без него.
 
+#### Решение
 
+Запуск сервера 3  
+
+```
+mkdir server3 && cd server3  
+echo "Response from Python Server 3" > index.html  
+python3 -m http.server 8003  
+```
 
 ---
 
