@@ -38,6 +38,7 @@ sudo apt install haproxy -y
 sudo nano /etc/haproxy/haproxy.cfg  
 ```
 
+Останавливаем haproxy, меняем конфиг haproxy.cfg и запускаем.  
 Конфигурационный файл [/etc/haproxy/haproxy.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_2/haproxy.cfg)  
 
 #### Проверка:  
