@@ -63,7 +63,9 @@
 
 *3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
 
+
 <img width="1653" height="548" alt="image" src="https://github.com/user-attachments/assets/a6a150f8-28c8-4ad7-aa7d-9c70c6180eb2" />
+
 
 
 ---
