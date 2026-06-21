@@ -51,7 +51,8 @@
 
 <img width="1297" height="520" alt="image" src="https://github.com/user-attachments/assets/ffb796dd-dc1a-4436-9120-a64ab5cf55f8" />
 
-
+#### Решение  
+  
 *В качестве результата пришлите:*  
 
 *1. Terraform Playbook.*  
