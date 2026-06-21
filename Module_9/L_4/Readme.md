@@ -52,10 +52,13 @@
 <img width="1297" height="520" alt="image" src="https://github.com/user-attachments/assets/ffb796dd-dc1a-4436-9120-a64ab5cf55f8" />
 
 
-*В качестве результата пришлите:*
+*В качестве результата пришлите:*  
 
-*1. Terraform Playbook.*
-
+*1. Terraform Playbook.*  
+  
+[main.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_4/Terraform/main.tf)  
+[variables.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_4/Terraform/variables.tf)  
+  
 *2. Скриншот статуса балансировщика и целевой группы.*
 <img width="1218" height="900" alt="image" src="https://github.com/user-attachments/assets/2aa8e80f-d028-40c5-ae87-e3cce94fcc09" />
 
