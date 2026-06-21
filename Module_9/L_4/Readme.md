@@ -61,12 +61,15 @@
 [main.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_4/Terraform/main.tf)  
 [variables.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_9/L_4/Terraform/variables.tf)  
   
-*2. Скриншот статуса балансировщика и целевой группы.*
-<img width="1218" height="900" alt="image" src="https://github.com/user-attachments/assets/2aa8e80f-d028-40c5-ae87-e3cce94fcc09" />
+*2. Скриншот статуса балансировщика и целевой группы.*  
 
-<img width="1620" height="914" alt="image" src="https://github.com/user-attachments/assets/7b642c14-d892-44b4-9d7d-d30579d928d4" />
-
-*3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
+ <img width="1293" height="315" alt="image" src="https://github.com/user-attachments/assets/917c96fb-945f-48d2-8dcc-5e0521cec7e4" />  
+   
+<img width="1218" height="900" alt="image" src="https://github.com/user-attachments/assets/2aa8e80f-d028-40c5-ae87-e3cce94fcc09" />  
+  
+<img width="1620" height="914" alt="image" src="https://github.com/user-attachments/assets/7b642c14-d892-44b4-9d7d-d30579d928d4" />  
+  
+*3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*  
 
 
 <img width="1653" height="548" alt="image" src="https://github.com/user-attachments/assets/a6a150f8-28c8-4ad7-aa7d-9c70c6180eb2" />
