@@ -38,7 +38,11 @@
 3. Перейдите в веб-консоль Yandex Cloud и убедитесь, что: 
 
 - созданный балансировщик находится в статусе Active,
+ <img width="1293" height="315" alt="image" src="https://github.com/user-attachments/assets/917c96fb-945f-48d2-8dcc-5e0521cec7e4" />
 - обе виртуальные машины в целевой группе находятся в состоянии healthy.
+<img width="1184" height="325" alt="image" src="https://github.com/user-attachments/assets/4fe12372-abf8-4a20-9898-5b79cb8ae47a" />
+
+<img width="841" height="438" alt="image" src="https://github.com/user-attachments/assets/fe6e62c1-c6c1-4977-8a11-beb9039b73c3" />
 
 4. Сделайте запрос на 80 порт на внешний IP-адрес балансировщика и убедитесь, что вы получаете ответ в виде дефолтной страницы Nginx.
 
