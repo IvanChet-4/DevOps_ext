@@ -55,6 +55,17 @@ sudo apt install python3-pika
 
 <img width="956" height="402" alt="image" src="https://github.com/user-attachments/assets/f6a4580b-a454-4283-8e43-19d6d4a2c27a" />
 
+Поменял в скриптах localhost.  
+
+Запустил первый скрипт:  
+
+```
+sudo python3 producer.py
+```  
+
+<img width="1104" height="606" alt="image" src="https://github.com/user-attachments/assets/afaa1cd0-61ba-4bde-99cc-4963d7d40727" />
+
+
 
 ---
 
