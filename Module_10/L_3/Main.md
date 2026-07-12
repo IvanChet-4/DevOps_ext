@@ -28,9 +28,17 @@
 sudo sysctl -w vm.max_map_count=262144
 ```
 
+Добавляем в docker-compose.yml параметр:  
 
+```
 - cluster.name=netology-custom-cluster
+```
 
+Запускаем:
+
+```
+docker compose up -d
+```
 
 <img width="1513" height="273" alt="image" src="https://github.com/user-attachments/assets/f5eaacde-0e2d-4dbb-a53c-bb2108f7bdbe" />  
 
