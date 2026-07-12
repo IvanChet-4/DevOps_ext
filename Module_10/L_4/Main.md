@@ -7,6 +7,22 @@
 
 *Итогом выполнения домашнего задания будет приложенный скриншот веб-интерфейса RabbitMQ.*
 
+#### Решение:  
+
+Создаем файл:  
+docker-compose.yml  
+
+```  
+Запускаем:
+docker compose up -d
+```  
+
+<img width="1509" height="122" alt="image" src="https://github.com/user-attachments/assets/fa21c2a2-27c9-48b8-a99e-c5a9829bbc47" />  
+
+
+<img width="1434" height="734" alt="image" src="https://github.com/user-attachments/assets/ac8853e7-0e18-4510-8ec5-e994e82c1340" />  
+
+
 ---
 
 ### Задание 2. Отправка и получение сообщений
