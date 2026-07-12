@@ -74,7 +74,12 @@ channel.basic_consume(callback, queue='hello', no_ack=True)
 Поставил:
 channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
 
-```  
+```
+
+Обновленный файл:  
+
+[consumer.py](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/consumer.py)  
+
 
 Запуск второго скрипта:  
 
