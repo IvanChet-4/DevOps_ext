@@ -105,6 +105,15 @@ echo '127.0.0.1 - - [12/Jul/2026:16:00:00 +0300] "GET /test-udp-logstash HTTP/1.
 curl -X GET "localhost:9200/_cat/indices?v"
 ```
 
+<img width="1325" height="211" alt="image" src="https://github.com/user-attachments/assets/3e161f89-feb9-4b94-becc-ab765cbf7cc5" />  
+
+<img width="939" height="204" alt="image" src="https://github.com/user-attachments/assets/2db30516-e966-4960-848b-e3f67d6121f6" />
+
+Результат:  
+
+<img width="1526" height="749" alt="image" src="https://github.com/user-attachments/assets/9bf0e7a6-ae26-4079-9b92-4be003963360" />  
+
+
 ---
 
 ### Задание 4. Filebeat. 
