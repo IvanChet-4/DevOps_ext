@@ -45,6 +45,17 @@ $ pip install pika
 
 Для закрепления материала можете попробовать модифицировать скрипты, чтобы поменять название очереди и отправляемое сообщение.
 
+#### Решение:   
+
+Ставим пакет pika:  
+
+```  
+sudo apt install python3-pika
+```  
+
+<img width="956" height="402" alt="image" src="https://github.com/user-attachments/assets/f6a4580b-a454-4283-8e43-19d6d4a2c27a" />
+
+
 ---
 
 ### Задание 3. Подготовка HA кластера
