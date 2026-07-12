@@ -156,7 +156,19 @@ $ rabbitmqadmin get queue='hello'
 
 #### Решение:  
 
-sudo apt install ansible-core
+[ansible.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_4/ansible.cfg)  
+
+[deploy_rabbitmq.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_4/deploy_rabbitmq.yml)  
+
+[hosts.ini](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_4/hosts.ini)  
+
+Ставим пакеты:  
+
+sudo apt update && sudo apt install -y sshpass   
+
+sudo apt install ansible-core  
+
+Ставим коллекцию:  
 
 ansible-galaxy collection install community.rabbitmq
 
