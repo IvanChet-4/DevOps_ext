@@ -133,6 +133,16 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1323" height="706" alt="image" src="https://github.com/user-attachments/assets/d020b216-8b63-48b8-89e9-81f7bdae19ef" />
 
+<img width="637" height="303" alt="image" src="https://github.com/user-attachments/assets/cb4d035b-8e82-4de2-9c94-176eb178dc66" />  
+
+<img width="687" height="542" alt="image" src="https://github.com/user-attachments/assets/c2ce8595-7579-43c6-8638-3b6cd894ede4" />  
+
+<img width="1266" height="156" alt="image" src="https://github.com/user-attachments/assets/5d58d2be-c4d0-4e82-8ae6-4ed605dd201b" />  
+
+<img width="1297" height="132" alt="image" src="https://github.com/user-attachments/assets/1ed8ad7d-220c-42ca-8ce0-acb0dc4982ab" />  
+
+
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
