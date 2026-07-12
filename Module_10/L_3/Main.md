@@ -54,6 +54,7 @@ docker compose up -d
 curl -X GET 'localhost:9200/_cluster/health?pretty
 ```
 
+Видим корректно установленное имя кластера (netology-custom-cluster):
 
 <img width="796" height="424" alt="image" src="https://github.com/user-attachments/assets/4069578f-95ce-4d58-ab7a-3ee96fa5d411" />  
 
