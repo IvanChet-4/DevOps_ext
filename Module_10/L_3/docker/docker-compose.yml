@@ -59,7 +59,7 @@ services:
       - "5044:5044/udp"
     volumes:
       - ./projects/test/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - nginx-logs:/var/log/nginx
+      - nginx-logs:/var/log/nginx:ro
     depends_on:
       - elasticsearch
 
