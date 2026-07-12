@@ -133,9 +133,17 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1323" height="706" alt="image" src="https://github.com/user-attachments/assets/d020b216-8b63-48b8-89e9-81f7bdae19ef" />
 
+Вывод команд rabbitmqctl cluster_status:
+
+[cluster_status_pc1](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_3/cluster_status_pc1)  
+
+[cluster_status_pc2](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_3/cluster_status_pc2)  
+
 <img width="637" height="303" alt="image" src="https://github.com/user-attachments/assets/cb4d035b-8e82-4de2-9c94-176eb178dc66" />  
 
 <img width="687" height="542" alt="image" src="https://github.com/user-attachments/assets/c2ce8595-7579-43c6-8638-3b6cd894ede4" />  
+
+Вывод команд rabbitmqadmin get queue='hello':
 
 <img width="1266" height="156" alt="image" src="https://github.com/user-attachments/assets/5d58d2be-c4d0-4e82-8ae6-4ed605dd201b" />  
 
