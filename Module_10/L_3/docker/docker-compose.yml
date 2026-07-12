@@ -43,6 +43,24 @@ services:
       - /var/lib/docker:/var/lib/docker:ro
       - /var/run/docker.sock:/var/run/docker.sock
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - nginx-logs:/var/log/nginx
+
+  logstash:
+    image: logstash:7.17.9
+    container_name: logstash
+    volumes:
+      - /projects/test/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - nginx-logs:/var/log/nginx
+    depends_on:
+      - elasticsearch
+
 volumes:
   elasticsearch-data:
     driver: local
+  nginx-logs:
