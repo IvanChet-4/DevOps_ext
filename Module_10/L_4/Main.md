@@ -84,7 +84,7 @@ channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True
 Запуск второго скрипта:  
 
 ```  
-sudo python3 producer.py
+sudo python3 consumer.py
 ```    
 
 <img width="548" height="71" alt="image" src="https://github.com/user-attachments/assets/5587359f-bd2c-4a5f-944a-5d6c8dd8081e" />
