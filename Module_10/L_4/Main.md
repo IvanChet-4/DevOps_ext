@@ -10,7 +10,7 @@
 #### Решение:  
 
 Создаем файл:  
-docker-compose.yml  
+[docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/docker-compose.yml)  
 
 ```  
 Запускаем:
