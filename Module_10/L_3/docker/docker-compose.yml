@@ -54,6 +54,8 @@ services:
   logstash:
     image: logstash:7.17.9
     container_name: logstash
+    ports:
+      - "5044:5044/udp"
     volumes:
       - ./projects/test/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
       - nginx-logs:/var/log/nginx
