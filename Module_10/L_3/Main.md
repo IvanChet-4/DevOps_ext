@@ -34,6 +34,10 @@ sudo sysctl -w vm.max_map_count=262144
 - cluster.name=netology-custom-cluster
 ```
 
+Добавляем файл filebeat.yml:
+
+[filebeat.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/config/filebeat.yml)
+
 Запускаем:
 
 ```
