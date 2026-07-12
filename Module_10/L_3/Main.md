@@ -97,6 +97,11 @@ curl -X GET 'localhost:9200/_cluster/health?pretty
 
 [docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/docker/docker-compose.yml)  
 
+```
+Смотрим индексы
+curl -X GET "localhost:9200/_cat/indices?v"
+```
+
 ---
 
 ### Задание 4. Filebeat. 
