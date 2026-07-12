@@ -23,7 +23,19 @@
 
 #### Решение:  
 
+Перед запуском выполняем:
+```
 sudo sysctl -w vm.max_map_count=262144
+```
+
+
+- cluster.name=netology-custom-cluster
+
+
+<img width="1513" height="273" alt="image" src="https://github.com/user-attachments/assets/f5eaacde-0e2d-4dbb-a53c-bb2108f7bdbe" />  
+
+<img width="1509" height="202" alt="image" src="https://github.com/user-attachments/assets/d6ef36d9-707b-449f-8fa2-c36905e07315" />  
+
 
 ---
 
