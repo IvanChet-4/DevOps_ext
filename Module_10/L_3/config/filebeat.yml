@@ -1,0 +1,30 @@
+# ============================== Filebeat Inputs ===============================
+filebeat.inputs:
+- type: log
+  enabled: true
+  # Путь к логам всех Docker-контейнеров на хосте внутри Filebeat
+  paths:
+    - /var/lib/docker/containers/*/*.log
+
+  # Опция для парсинга JSON-логов, которые генерирует Docker по умолчанию
+  json.keys_under_root: true
+  json.add_error_key: true
+  json.message_key: log
+
+# =============================== Processors ===================================
+processors:
+  - add_docker_metadata:
+      host: "unix:///var/run/docker.sock"
+
+  - drop_fields:
+      fields: ["agent", "stream", "ecs", "input"]
+      ignore_missing: true
+
+# =============================== Outputs ======================================
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+# =============================== Setup Dashboards =============================
+# Автоматическая настройка индексов в Kibana
+setup.kibana:
+  host: "http://kibana:5601"
