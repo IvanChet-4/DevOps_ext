@@ -42,6 +42,7 @@ services:
       - ./projects/test/filebeat.yml:/usr/share/filebeat/filebeat.yml
       - /var/lib/docker:/var/lib/docker:ro
       - /var/run/docker.sock:/var/run/docker.sock
+      - nginx-logs:/var/log/nginx:ro
 
   nginx:
     image: nginx:latest
