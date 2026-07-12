@@ -136,6 +136,7 @@ $ rabbitmqadmin get queue='hello'
 
 *Готовый плейбук разместите в своём репозитории.*
 
+sudo apt install ansible-core
 
 ansible-galaxy collection install community.rabbitmq
 
