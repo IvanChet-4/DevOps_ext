@@ -140,11 +140,25 @@ curl -X GET "localhost:9200/_cat/indices?v"
 
 #### Решение:  
 
-```  
+```
+Создаем папку с логами некоторого приложения:
 mkdir projects/app_logs
 
+Создаем файл логов, добавляем в него несколько записей:
 nano projects/app_logs/auth.log
 [2026-07-12 17:15:32] INFO: Пользователь admin вошел успешно с IP 192.168.1.105
 [2026-07-12 17:25:32] INFO: Пользователь admin вошел успешно с IP 192.168.1.106
 [2026-07-12 17:35:32] INFO: Пользователь admin вошел успешно с IP 192.168.1.107
+```
+
+```
+После изменения конфигурационных файлов делаем recreate:
+docker compose up -d --force-recreate filebeat logstash
+
+Добавляем строку в этот лог, чтобы спровоцировать отправку:
+sudo bash -c 'echo "[2026-07-12 17:18:01] WARN: Пользователь guest вошел успешно с IP 10.0.0.5" >> /projects/test/app_logs/auth.log'
+
 ```  
+
+
+<img width="1535" height="770" alt="image" src="https://github.com/user-attachments/assets/bb04ac42-6dfe-434b-b694-35222e5a3317" />  
