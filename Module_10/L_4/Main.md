@@ -156,6 +156,8 @@ $ rabbitmqadmin get queue='hello'
 
 #### Решение:  
 
+Создаем файлы:  
+
 [ansible.cfg](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_4/ansible.cfg)  
 
 [deploy_rabbitmq.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/Z_4/deploy_rabbitmq.yml)  
@@ -170,9 +172,13 @@ sudo apt install ansible-core
 
 Ставим коллекцию:  
 
-ansible-galaxy collection install community.rabbitmq
+ansible-galaxy collection install community.rabbitmq  
 
-ansible-playbook -i hosts.ini deploy_rabbitmq.yml
+Запускаем:  
+
+ansible-playbook -i hosts.ini deploy_rabbitmq.yml  -k -K  
+
+Создаем пользователя с правами:  
 
 sudo rabbitmqctl add_user admin adminpass  
 
