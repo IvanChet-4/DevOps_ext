@@ -125,6 +125,11 @@ $ rabbitmqadmin get queue='hello'
 
 *Приложите скриншот результата работы второго скрипта.*
 
+#### Решение:  
+
+<img width="1457" height="710" alt="image" src="https://github.com/user-attachments/assets/3f2c476e-2de4-48bd-9652-6254ac4c74ce" />  
+
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
@@ -135,6 +140,8 @@ $ rabbitmqadmin get queue='hello'
 При этом будет автоматически создавать политику ha-all.
 
 *Готовый плейбук разместите в своём репозитории.*
+
+#### Решение:  
 
 sudo apt install ansible-core
 
@@ -148,3 +155,5 @@ ansible-playbook -i hosts.ini deploy_rabbitmq.yml
 <img width="1359" height="852" alt="image" src="https://github.com/user-attachments/assets/861241bd-f34c-4c7c-9062-22b892e88b8b" />  
 
 <img width="1033" height="611" alt="image" src="https://github.com/user-attachments/assets/d8e73cab-484a-4f89-9054-bc41dfb2a67b" />
+
+<img width="1457" height="710" alt="image" src="https://github.com/user-attachments/assets/12bedd10-661f-4c5f-a40b-5830e7f89583" />
