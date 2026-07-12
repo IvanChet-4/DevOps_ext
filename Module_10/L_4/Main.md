@@ -145,6 +145,7 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1568" height="787" alt="image" src="https://github.com/user-attachments/assets/8b9848b0-fb5a-4e61-8400-ff7cf6e491d0" />  
 
+<img width="1181" height="694" alt="image" src="https://github.com/user-attachments/assets/9b879e8d-e5c2-4863-b533-e9d2c5ed6f3b" />  
 
 
 ## Дополнительные задания (со звёздочкой*)
