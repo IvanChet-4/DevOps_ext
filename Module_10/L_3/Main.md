@@ -156,7 +156,7 @@ nano projects/app_logs/auth.log
 docker compose up -d --force-recreate filebeat logstash
 
 Добавляем строку в этот лог, чтобы спровоцировать отправку:
-sudo bash -c 'echo "[2026-07-12 17:18:01] WARN: Пользователь guest вошел успешно с IP 10.0.0.5" >> /projects/test/app_logs/auth.log'
+sudo bash -c 'echo "[2026-07-12 17:18:01] WARN: Пользователь guest вошел успешно с IP 10.0.0.5" >> projects/app_logs/auth.log'
 
 ```  
 
