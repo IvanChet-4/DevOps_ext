@@ -87,7 +87,15 @@ curl -X GET 'localhost:9200/_cluster/health?pretty
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
 
-#### Решение  
+#### Решение:    
+
+Добавляем конфигурационный файл logstash.conf:  
+
+[logstash.conf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/config/logstash.conf)  
+
+Добавляем дополнительные сервисы (nginx, logstash) в docker-compose.yml:  
+
+[docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/docker/docker-compose.yml)  
 
 ---
 
