@@ -23,26 +23,27 @@
 
 #### Решение:  
 
-Перед запуском выполняем:
-```
+Перед запуском выполняем:  
+
+```  
 sudo sysctl -w vm.max_map_count=262144
-```
+```  
 
 Добавляем в docker-compose.yml параметр:  
 
-```
+```  
 - cluster.name=netology-custom-cluster
-```
+```  
 
-Добавляем файл filebeat.yml:
+Добавляем файл filebeat.yml:  
 
-[filebeat.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/config/filebeat.yml)
+[filebeat.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/config/filebeat.yml)  
 
-Запускаем:
+Запускаем:  
 
-```
+```  
 docker compose up -d
-```
+```  
 
 <img width="1513" height="273" alt="image" src="https://github.com/user-attachments/assets/f5eaacde-0e2d-4dbb-a53c-bb2108f7bdbe" />  
 
@@ -50,9 +51,9 @@ docker compose up -d
 
 Теперь выполняем команду:  
 
-```
+```  
 curl -X GET 'localhost:9200/_cluster/health?pretty
-```
+```  
 
 Видим корректно установленное имя кластера (netology-custom-cluster):  
 
@@ -65,9 +66,18 @@ curl -X GET 'localhost:9200/_cluster/health?pretty
 
 Установите и запустите Kibana.
 
-*Приведите скриншот интерфейса Kibana на странице http://<ip вашего сервера>:5601/app/dev_tools#/console, где будет выполнен запрос GET /_cluster/health?pretty*.
+*Приведите скриншот интерфейса Kibana на странице http://<ip вашего сервера>:5601/app/dev_tools#/console, где будет выполнен запрос GET /_cluster/health?pretty*.  
 
-#### Решение
+#### Решение:    
+
+Открываем веб-интерфейс http://localhost:5601/app/dev_tools#/console:  
+
+<img width="1030" height="599" alt="image" src="https://github.com/user-attachments/assets/0f7a55d0-04ad-4a22-8860-c81f64e2b068" />  
+
+
+Выполняем запрос  GET /_cluster/health?pretty :  
+
+<img width="1164" height="652" alt="image" src="https://github.com/user-attachments/assets/d7663306-667a-447c-82b6-2d69ab3829ce" />  
 
 ---
 
