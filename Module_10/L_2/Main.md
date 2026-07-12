@@ -51,6 +51,18 @@
 
 *Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
 
+#### Решение:   
+
+Команда запуска:  
+
+```
+docker run --name my-memcached -d -p 11211:11211 memcached  
+```
+
+<img width="1505" height="417" alt="image" src="https://github.com/user-attachments/assets/8ee0c5e5-a94f-4f27-82a9-dcfd10296268" />  
+
+Статус UP, порты проброшены.
+
 ---
 
 ### Задание 3. Удаление по TTL в Memcached
