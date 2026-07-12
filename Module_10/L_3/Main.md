@@ -124,7 +124,8 @@ curl -X GET "localhost:9200/_cat/indices?v"
 
 #### Решение:  
 
-<img width="1507" height="714" alt="image" src="https://github.com/user-attachments/assets/222d172b-3d29-4bcb-ae05-0f1eb80964c4" />  
+<img width="1524" height="672" alt="image" src="https://github.com/user-attachments/assets/07cdb944-3c40-43d7-a33e-117ab1908c98" />  
+
 
 
 ## Дополнительные задания (со звёздочкой*)
