@@ -48,6 +48,15 @@ docker compose up -d
 
 <img width="1509" height="202" alt="image" src="https://github.com/user-attachments/assets/d6ef36d9-707b-449f-8fa2-c36905e07315" />  
 
+Теперь выполняем команду:  
+
+```
+curl -X GET 'localhost:9200/_cluster/health?pretty
+```
+
+
+<img width="796" height="424" alt="image" src="https://github.com/user-attachments/assets/4069578f-95ce-4d58-ab7a-3ee96fa5d411" />  
+
 
 ---
 
