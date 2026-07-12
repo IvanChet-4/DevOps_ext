@@ -146,3 +146,5 @@ ansible-playbook -i hosts.ini deploy_rabbitmq.yml
 <img width="1216" height="335" alt="image" src="https://github.com/user-attachments/assets/f7fd8746-7d74-4e19-86e1-fbca9285fcec" />  
 
 <img width="1359" height="852" alt="image" src="https://github.com/user-attachments/assets/861241bd-f34c-4c7c-9062-22b892e88b8b" />  
+
+<img width="1033" height="611" alt="image" src="https://github.com/user-attachments/assets/d8e73cab-484a-4f89-9054-bc41dfb2a67b" />
