@@ -1,0 +1,74 @@
+---
+- name: Развертывание HA кластера RabbitMQ на Ubuntu 24.04 LTS
+  hosts: rabbitmq
+  become: true
+  vars:
+    master_node: "{{ groups['rabbitmq'][0] }}"
+    # Секретный Erlang Cookie для авторизации узлов
+    erlang_cookie: "UBUNTU_NOBLE_HA_COOKIE_2026"
+
+  tasks:
+    - name: Обновление кэша системных пакетов apt
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Установка стабильного RabbitMQ из дистрибутива Ubuntu 24.04
+      ansible.builtin.apt:
+        name:
+          - rabbitmq-server
+          - python3-pip
+        state: present
+
+    - name: Остановка службы перед конфигурацией Cookie
+      ansible.builtin.systemd:
+        name: rabbitmq-server
+        state: stopped
+
+    - name: Запись синхронизированного Erlang Cookie
+      ansible.builtin.copy:
+        content: "{{ erlang_cookie }}"
+        dest: /var/lib/rabbitmq/.erlang.cookie
+        owner: rabbitmq
+        group: rabbitmq
+        mode: '0400'
+
+    - name: Запуск службы с новым Cookie
+      ansible.builtin.systemd:
+        name: rabbitmq-server
+        state: started
+        enabled: yes
+
+    - name: Включение плагина Web UI (Management)
+      community.rabbitmq.rabbitmq_plugin:
+        names: rabbitmq_management
+        state: enabled
+
+    # --- СБОРКА КЛАСТЕРА ---
+
+    - name: Настройка ведомого узла и добавление в кластер
+      block:
+        - name: Остановка приложения RabbitMQ на user-pc2
+          ansible.builtin.command: rabbitmqctl stop_app
+
+        - name: Полный сброс конфигурации ноды user-pc2
+          ansible.builtin.command: rabbitmqctl reset
+
+        - name: Присоединение user-pc2 к мастеру user-pc1
+          ansible.builtin.command: "rabbitmqctl join_cluster rabbit@{{ hostvars[master_node]['ansible_hostname'] }}"
+
+        - name: Возобновление работы приложения RabbitMQ на user-pc2
+          ansible.builtin.command: rabbitmqctl start_app
+      when: inventory_hostname != master_node
+
+    # --- СОЗДАНИЕ ПОЛИТИКИ ---
+
+    - name: Настройка зеркалирования всех очередей (ha-all)
+      community.rabbitmq.rabbitmq_policy:
+        name: ha-all
+        pattern: '^'
+        tags:
+          ha-mode: all
+          ha-sync-mode: automatic
+        state: present
+      when: inventory_hostname == master_node
