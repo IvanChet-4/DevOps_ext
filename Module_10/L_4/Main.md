@@ -65,6 +65,24 @@ sudo python3 producer.py
 
 <img width="1104" height="606" alt="image" src="https://github.com/user-attachments/assets/afaa1cd0-61ba-4bde-99cc-4963d7d40727" />
 
+Из за особенностей версий pika пришлось поправить скрипт consumer.py:  
+
+```  
+Вместо:
+channel.basic_consume(callback, queue='hello', no_ack=True)
+
+Поставил:
+channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
+
+```  
+
+Запуск второго скрипта:  
+
+```  
+sudo python3 producer.py
+```    
+
+<img width="548" height="71" alt="image" src="https://github.com/user-attachments/assets/5587359f-bd2c-4a5f-944a-5d6c8dd8081e" />
 
 
 ---
