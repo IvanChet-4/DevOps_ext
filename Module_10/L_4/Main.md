@@ -141,6 +141,9 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1297" height="132" alt="image" src="https://github.com/user-attachments/assets/1ed8ad7d-220c-42ca-8ce0-acb0dc4982ab" />  
 
+Отключил одну ноду:  
+
+<img width="1568" height="787" alt="image" src="https://github.com/user-attachments/assets/8b9848b0-fb5a-4e61-8400-ff7cf6e491d0" />  
 
 
 
