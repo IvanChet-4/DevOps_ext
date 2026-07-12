@@ -98,6 +98,9 @@ curl -X GET 'localhost:9200/_cluster/health?pretty
 [docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/docker/docker-compose.yml)  
 
 ```
+Имитирует работу веб-сервера Nginx и вручную отправляет тестовую строку лога:
+echo '127.0.0.1 - - [12/Jul/2026:16:00:00 +0300] "GET /test-udp-logstash HTTP/1.1" 200 612 "-" "curl"' | nc -u -w1 localhost 5044
+
 Смотрим индексы
 curl -X GET "localhost:9200/_cat/indices?v"
 ```
