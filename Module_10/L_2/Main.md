@@ -115,6 +115,27 @@ quit
 docker run --name my-redis -d -p 6379:6379 redis
 ```
 
+<img width="1502" height="404" alt="image" src="https://github.com/user-attachments/assets/ad8fa34d-b3b1-4d0d-abb4-d99d95a797d0" />  
+
+```
+Заходим в контейнер под:
+docker exec -it -u 0 my-redis redis-cli
+
+Запись ключей и значений:
+SET user:1 "Ivan"
+SET user:2 "Anna"
+SET status "active"
+
+Получение всех ключей и значений:
+KEYS *
+MGET user:1 user:2 status
+
+Выход:
+exit
+```
+
+<img width="698" height="381" alt="image" src="https://github.com/user-attachments/assets/a76f0f7c-afe5-4b01-8215-a0269569a40d" />  
+
 
 
 ## Дополнительные задания (со звёздочкой*)
