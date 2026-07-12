@@ -135,3 +135,8 @@ $ rabbitmqadmin get queue='hello'
 При этом будет автоматически создавать политику ha-all.
 
 *Готовый плейбук разместите в своём репозитории.*
+
+
+ansible-galaxy collection install community.rabbitmq
+
+ansible-playbook -i hosts.ini deploy_rabbitmq.yml
