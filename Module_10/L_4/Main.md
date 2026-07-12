@@ -12,8 +12,9 @@
 Создаем файл:  
 [docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_4/docker-compose.yml)  
 
+Запускаем:  
+
 ```  
-Запускаем:
 docker compose up -d
 ```  
 
