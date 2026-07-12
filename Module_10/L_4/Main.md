@@ -131,6 +131,8 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1249" height="684" alt="image" src="https://github.com/user-attachments/assets/9120a599-c5a7-4123-94ed-8d0ff8b898a8" />
 
+<img width="1323" height="706" alt="image" src="https://github.com/user-attachments/assets/d020b216-8b63-48b8-89e9-81f7bdae19ef" />
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
