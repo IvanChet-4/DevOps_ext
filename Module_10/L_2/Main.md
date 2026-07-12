@@ -71,6 +71,31 @@ docker run --name my-memcached -d -p 11211:11211 memcached
 
 *Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.*
 
+#### Решение:  
+
+```
+Подключение к Memcached:
+telnet localhost 11211
+
+Запись ключей с TTL = 5 секунд:
+set key1 0 5 4
+test
+set key2 0 5 4
+test
+
+Проверка работы условия ttl=5:
+get key1
+get key2
+```
+
+
+<img width="502" height="406" alt="image" src="https://github.com/user-attachments/assets/e8a5f287-0840-4054-822e-479f26c23a51" />  
+
+При ttl=5 почему то не успеваю проверить, поставил ttl=10  
+
+<img width="226" height="162" alt="image" src="https://github.com/user-attachments/assets/a3fec35b-a9f1-4da8-a9ff-d7fd87a78143" />  
+
+
 ---
 
 ### Задание 4. Запись данных в Redis
