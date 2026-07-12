@@ -151,6 +151,16 @@ nano projects/app_logs/auth.log
 [2026-07-12 17:35:32] INFO: Пользователь admin вошел успешно с IP 192.168.1.107
 ```
 
+Меняем конфигурационные файлы, добавляем доступ к файлу логов в docker-compose.yml:
+
+[logstash.conf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/z_5/logstash.conf)  
+
+[filebeat.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/z_5/filebeat.yml)  
+
+[auth.log](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/z_5/auth.log)  
+
+[docker-compose.yml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_10/L_3/z_5/docker-compose.yml)  
+
 ```
 После изменения конфигурационных файлов делаем recreate:
 docker compose up -d --force-recreate filebeat logstash
@@ -159,6 +169,7 @@ docker compose up -d --force-recreate filebeat logstash
 sudo bash -c 'echo "[2026-07-12 17:18:01] WARN: Пользователь guest вошел успешно с IP 10.0.0.5" >> projects/app_logs/auth.log'
 
 ```  
+
 
 
 <img width="1535" height="770" alt="image" src="https://github.com/user-attachments/assets/bb04ac42-6dfe-434b-b694-35222e5a3317" />  
