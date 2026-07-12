@@ -129,6 +129,7 @@ $ rabbitmqadmin get queue='hello'
 
 <img width="1457" height="710" alt="image" src="https://github.com/user-attachments/assets/3f2c476e-2de4-48bd-9652-6254ac4c74ce" />  
 
+<img width="1249" height="684" alt="image" src="https://github.com/user-attachments/assets/9120a599-c5a7-4123-94ed-8d0ff8b898a8" />
 
 
 ## Дополнительные задания (со звёздочкой*)
@@ -157,3 +158,5 @@ ansible-playbook -i hosts.ini deploy_rabbitmq.yml
 <img width="1033" height="611" alt="image" src="https://github.com/user-attachments/assets/d8e73cab-484a-4f89-9054-bc41dfb2a67b" />
 
 <img width="1457" height="710" alt="image" src="https://github.com/user-attachments/assets/12bedd10-661f-4c5f-a40b-5830e7f89583" />
+
+<img width="1249" height="684" alt="image" src="https://github.com/user-attachments/assets/61600b49-d548-4a88-8d16-567a3bef4ec1" />
