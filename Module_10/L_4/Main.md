@@ -152,6 +152,11 @@ ansible-galaxy collection install community.rabbitmq
 
 ansible-playbook -i hosts.ini deploy_rabbitmq.yml
 
+sudo rabbitmqctl add_user admin adminpass  
+
+sudo rabbitmqctl set_user_tags admin administrator  
+
+sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"  
 
 <img width="1216" height="335" alt="image" src="https://github.com/user-attachments/assets/f7fd8746-7d74-4e19-86e1-fbca9285fcec" />  
 
