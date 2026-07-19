@@ -69,7 +69,22 @@ LIMIT 1;
 
 Посчитайте количество продаж, выполненных каждым продавцом. Добавьте вычисляемую колонку «Премия». Если количество продаж превышает 8000, то значение в колонке будет «Да», иначе должно быть значение «Нет».
 
-#### Решение
+#### Решение  
+
+```  
+SELECT 
+    st.staff_id AS "ID продавца",
+    st.last_name AS "Фамилия",
+    st.first_name AS "Имя",
+    COUNT(p.payment_id) AS "Количество продаж",
+    CASE 
+        WHEN COUNT(p.payment_id) > 8000 THEN 'Да'
+        ELSE 'Нет'
+    END AS "Премия"
+FROM staff st
+JOIN payment p ON st.staff_id = p.staff_id
+GROUP BY st.staff_id, st.last_name, st.first_name;
+```  
 
 ----
 
