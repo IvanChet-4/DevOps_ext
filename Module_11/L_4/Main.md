@@ -92,6 +92,16 @@ GROUP BY st.staff_id, st.last_name, st.first_name;
 
 Найдите фильмы, которые ни разу не брали в аренду.
 
-#### Решение
+#### Решение  
+
+```  
+SELECT 
+    f.film_id AS "ID фильма",
+    f.title AS "Название фильма"
+FROM film f
+LEFT JOIN inventory i ON f.film_id = i.film_id
+LEFT JOIN rental r ON i.inventory_id = r.inventory_id
+WHERE r.rental_id IS NULL;
+```  
 
 ----
