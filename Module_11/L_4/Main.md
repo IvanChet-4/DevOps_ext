@@ -7,7 +7,23 @@
 - город нахождения магазина;
 - количество пользователей, закреплённых в этом магазине.
 
-#### Решение
+#### Решение  
+
+```  
+SELECT 
+    st.last_name AS "Фамилия сотрудника",
+    st.first_name AS "Имя сотрудника",
+    ci.city AS "Город магазина",
+    COUNT(cu.customer_id) AS "Количество клиентов"
+FROM store s
+JOIN staff st ON s.manager_staff_id = st.staff_id
+JOIN address a ON s.address_id = a.address_id
+JOIN city ci ON a.city_id = ci.city_id
+JOIN customer cu ON s.store_id = cu.store_id
+GROUP BY s.store_id, st.last_name, st.first_name, ci.city
+HAVING COUNT(cu.customer_id) > 300;
+```  
+
 
 ----
 
