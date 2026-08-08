@@ -1,0 +1,84 @@
+services:
+  # Центральный маршрутизатор (Router / Координатор)
+  db-router:
+    image: postgres:15-alpine
+    container_name: db_router
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: router_password
+      POSTGRES_DB: bookstore_router
+    ports:
+      - "5437:5432"
+    volumes:
+      - ./db-router.sql:/docker-entrypoint-initdb.d/db-router.sql
+    networks:
+      - sharding_net
+
+  # Вертикальный кластер USERS - Шард 1 (Четные ID)
+  user-shard-1:
+    image: postgres:15-alpine
+    container_name: user_shard_1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: shard_password
+      POSTGRES_DB: user_db_1
+    volumes:
+      - ./user-shard-1.sql:/docker-entrypoint-initdb.d/user-shard-1.sql
+    networks:
+      - sharding_net
+
+  # Вертикальный кластер USERS - Шард 2 (Нечетные ID)
+  user-shard-2:
+    image: postgres:15-alpine
+    container_name: user_shard_2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: shard_password
+      POSTGRES_DB: user_db_2
+    volumes:
+      - ./user-shard-2.sql:/docker-entrypoint-initdb.d/user-shard-2.sql
+    networks:
+      - sharding_net
+
+  # Вертикальный кластер BOOKS - Шард 1 (Четные ID)
+  book-shard-1:
+    image: postgres:15-alpine
+    container_name: book_shard_1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: shard_password
+      POSTGRES_DB: book_db_1
+    volumes:
+      - ./book-shard-1.sql:/docker-entrypoint-initdb.d/book-shard-1.sql
+    networks:
+      - sharding_net
+
+  # Вертикальный кластер BOOKS - Шард 2 (Нечетные ID)
+  book-shard-2:
+    image: postgres:15-alpine
+    container_name: book_shard_2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: shard_password
+      POSTGRES_DB: book_db_2
+    volumes:
+      - ./book-shard-2.sql:/docker-entrypoint-initdb.d/book-shard-2.sql
+    networks:
+      - sharding_net
+
+  # Вертикальный кластер STORES (Не шардирован, отдельный сервер)
+  store-db:
+    image: postgres:15-alpine
+    container_name: store_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: store_password
+      POSTGRES_DB: store_db
+    volumes:
+      - ./store-db.sql:/docker-entrypoint-initdb.d/store-db.sql
+    networks:
+      - sharding_net
+
+networks:
+  sharding_net:
+    driver: bridge
