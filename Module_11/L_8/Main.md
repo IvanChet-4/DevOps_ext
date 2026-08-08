@@ -94,7 +94,7 @@ pg_dump -U username -h localhost -F c -f "$BACKUP_DIR/db_$DATA_REC.dump" my_data
 
 Далее скрипт добавляется в планировщик задач:
 
-Затем скрипт добавляется в планировщик crontab -e. Запись для ежедневного запуска в 02:00 ночи выглядит так:
+Например в crontab -e. Запись для ежедневного запуска в 02:00 ночи выглядит так:
 
 ```
 0 2 * * * /bin/bash /path/to/scripts/backup.sh
