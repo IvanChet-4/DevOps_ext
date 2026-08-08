@@ -132,4 +132,11 @@ Data Dictionary:
 <img width="830" height="344" alt="image" src="https://github.com/user-attachments/assets/98cbe2dc-288a-4a62-bf57-9c17d96c3a20" />  
   
 <img width="1534" height="163" alt="image" src="https://github.com/user-attachments/assets/135de698-0a4b-4fb9-8228-cd46db8fcab7" />  
+
+  В случае выделения отдельных VPC под каждую ноду, то в скрипте [db-router.sql](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_11/L_7/db-router.sql) будут внесены изменения в части команд из блока "Регистрируем внешние сервера..."
+
+```
+CREATE SERVER user_srv_1 FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'user-shard-1', dbname 'user_db_1', port '5432');
+... 
+```
   
