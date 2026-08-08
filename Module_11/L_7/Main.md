@@ -126,3 +126,10 @@ Data Dictionary:
 *Пришлите конфиг Docker и SQL скрипт с командами для базы данных*.
 
 #### Решение
+
+В рамках теста запустил описанную в предыдущем задании схему на одной машине с помощью docker compose.
+  
+<img width="830" height="344" alt="image" src="https://github.com/user-attachments/assets/98cbe2dc-288a-4a62-bf57-9c17d96c3a20" />  
+  
+<img width="1534" height="163" alt="image" src="https://github.com/user-attachments/assets/135de698-0a4b-4fb9-8228-cd46db8fcab7" />  
+  
