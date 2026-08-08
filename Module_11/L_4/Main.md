@@ -95,13 +95,13 @@ GROUP BY st.staff_id, st.last_name, st.first_name;
 #### Решение  
 
 ```  
-SELECT 
-    f.film_id AS "ID фильма",
-    f.title AS "Название фильма"
+SELECT f.film_id, f.title 
 FROM film f
-LEFT JOIN inventory i ON f.film_id = i.film_id
-LEFT JOIN rental r ON i.inventory_id = r.inventory_id
-WHERE r.rental_id IS NULL;
+WHERE NOT EXISTS (
+    SELECT 1 FROM inventory i 
+    JOIN rental r ON i.inventory_id = r.inventory_id 
+    WHERE i.film_id = f.film_id
+);
 ```  
 
 ----
