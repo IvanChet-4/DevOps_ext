@@ -51,11 +51,11 @@ WHERE length > (SELECT AVG(length) FROM film);
 SELECT 
     DATE_FORMAT(p.payment_date, '%Y-%m') AS "Месяц",
     SUM(p.amount) AS "Сумма платежей",
-    COUNT(DISTINCT r.rental_id) AS "Количество аренд"
+    COUNT(DISTINCT p.rental_id) AS "Количество аренд"
 FROM payment p
-LEFT JOIN rental r ON p.rental_id = r.rental_id
+JOIN rental r ON p.rental_id = r.rental_id
 GROUP BY DATE_FORMAT(p.payment_date, '%Y-%m')
-ORDER BY "Сумма платежей" DESC
+ORDER BY SUM(p.amount) DESC
 LIMIT 1;
 ```  
 
