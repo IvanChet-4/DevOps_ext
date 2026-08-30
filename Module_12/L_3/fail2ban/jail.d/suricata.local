@@ -1,6 +1,7 @@
 [suricata]
 enabled  = true
 filter   = suricata
+backend  = polling
 logpath  = /var/log/suricata/eve.json
 banaction = nftables-multiport
 bantime  = 3600
