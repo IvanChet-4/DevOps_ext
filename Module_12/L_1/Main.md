@@ -25,6 +25,8 @@
 
 <img width="1085" height="779" alt="image" src="https://github.com/user-attachments/assets/52c004bf-4c69-4bd8-a3a1-55288ae2b1b3" />
 
+<img width="723" height="411" alt="image" src="https://github.com/user-attachments/assets/55ee2437-a183-48b9-9bff-f7bd2bf8856c" />
+
 
 ### Задание 2
 
