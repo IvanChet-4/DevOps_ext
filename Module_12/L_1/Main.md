@@ -16,18 +16,63 @@
 
 Для этого нужно в поиске ввести название сетевой службы, обнаруженной на атакуемой машине, и выбрать подходящие по версии уязвимости.
 
-Ответьте на следующие вопросы:
+### Решение:  
 
-- Какие сетевые службы в ней разрешены?
-- Какие уязвимости были вами обнаружены? (список со ссылками: достаточно трёх уязвимостей)
+Ответьте на следующие вопросы:  
+
+- Какие сетевые службы в ней разрешены?  
+
+#### Ниже прикреплен вывод после сканирования командой nmap -sV -p- -Pn IP-target. Все что в столбце SERVICE.  
+
+- Какие уязвимости были вами обнаружены? (список со ссылками: достаточно трёх уязвимостей)  
+
+vsftpd 2.3.4 — Бэкдор для удаленного выполнения команд (порт 21) -  Exploit-DB: EDB-ID 17491 (vsftpd 2.3.4 - Backdoor Command Execution)  
+
+Samba 3.X - 4.X — Удаленное выполнение команд через "Username Map Script" (порты 139/445) Exploit-DB: EDB-ID 16320 (Samba 3.0.20 < 3.0.25rc3 - Command Execution)  
+
+distccd v1 — Удаленное выполнение кода через компилятор (порт 3632) - Exploit-DB: EDB-ID 9915 (DistCC Daemon - Command Execution)  
   
-### Решение
 
-<img width="1085" height="779" alt="image" src="https://github.com/user-attachments/assets/52c004bf-4c69-4bd8-a3a1-55288ae2b1b3" />
+<img width="1085" height="779" alt="image" src="https://github.com/user-attachments/assets/52c004bf-4c69-4bd8-a3a1-55288ae2b1b3" />  
 
-<img width="723" height="411" alt="image" src="https://github.com/user-attachments/assets/55ee2437-a183-48b9-9bff-f7bd2bf8856c" />
-
-
+<img width="723" height="411" alt="image" src="https://github.com/user-attachments/assets/55ee2437-a183-48b9-9bff-f7bd2bf8856c" />  
+  
+```
+Not shown: 65505 closed tcp ports (reset)
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         vsftpd 2.3.4
+22/tcp    open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp    open  telnet      Linux telnetd
+25/tcp    open  smtp        Postfix smtpd
+53/tcp    open  domain      ISC BIND 9.4.2
+80/tcp    open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+111/tcp   open  rpcbind     2 (RPC #100000)
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp   open  exec        netkit-rsh rexecd
+513/tcp   open  login
+514/tcp   open  tcpwrapped
+1099/tcp  open  java-rmi    GNU Classpath grmiregistry
+1524/tcp  open  bindshell   Metasploitable root shell
+2049/tcp  open  nfs         2-4 (RPC #100003)
+2121/tcp  open  ftp         ProFTPD 1.3.1
+3306/tcp  open  mysql       MySQL 5.0.51a-3ubuntu5
+3632/tcp  open  distccd     distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+5432/tcp  open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+5900/tcp  open  vnc         VNC (protocol 3.3)
+6000/tcp  open  X11         (access denied)
+6667/tcp  open  irc         UnrealIRCd
+6697/tcp  open  irc         UnrealIRCd
+8009/tcp  open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp  open  http        Apache Tomcat/Coyote JSP engine 1.1
+8787/tcp  open  drb         Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+34878/tcp open  mountd      1-3 (RPC #100005)
+38566/tcp open  nlockmgr    1-4 (RPC #100021)
+42036/tcp open  java-rmi    GNU Classpath grmiregistry
+58149/tcp open  status      1 (RPC #100024)
+MAC Address: 08:00:27:97:51:3A (Oracle VirtualBox virtual NIC)
+```
+  
 ### Задание 2
 
 Проведите сканирование Metasploitable в режимах SYN, FIN, Xmas, UDP.
@@ -39,5 +84,5 @@
 - Чем отличаются эти режимы сканирования с точки зрения сетевого трафика?
 - Как отвечает сервер?
 
-### Решение
+### Решение:
 
