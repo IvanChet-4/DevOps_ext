@@ -134,4 +134,19 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
 
-### Решение:
+### Решение:  
+
+1.
+
+
+
+2. 
+<img width="677" height="241" alt="image" src="https://github.com/user-attachments/assets/91d2097e-8a12-4fb8-b4b8-94e1abaa53c5" />
+
+<img width="678" height="248" alt="image" src="https://github.com/user-attachments/assets/4127b350-1fc8-47c4-ae91-f1fddf5dc087" />
+
+<img width="1609" height="281" alt="image" src="https://github.com/user-attachments/assets/19f9e3c5-b012-4adc-a91a-b32117c22372" />
+
+<img width="1333" height="261" alt="image" src="https://github.com/user-attachments/assets/57f34f80-c6be-4392-a60b-45dacd5b43e5" />
+
+Строка WARNING [suricata] 10.0.2.6 already banned подтверждает, что атакующий хост превысил лимит попыток (maxretry) в первые секунды атаки. Fail2ban заблокировал его на уровне брандмауэра.
