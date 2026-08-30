@@ -1,0 +1,2 @@
+alert icmp any any -> any any (msg:"ICMP Ping Detected"; sid:1000001; rev:1;)
+alert tcp any any -> any any (msg:"Nmap Scan Detected"; flags:S; ack:0; sid:1000002; rev:1;)
