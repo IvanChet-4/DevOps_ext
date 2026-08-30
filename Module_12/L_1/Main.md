@@ -23,6 +23,7 @@
   
 ### Решение
 
+<img width="1085" height="779" alt="image" src="https://github.com/user-attachments/assets/52c004bf-4c69-4bd8-a3a1-55288ae2b1b3" />
 
 
 ### Задание 2
