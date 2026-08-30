@@ -1,0 +1,8 @@
+[suricata]
+enabled  = true
+filter   = suricata
+logpath  = /var/log/suricata/eve.json
+banaction = nftables-multiport
+bantime  = 3600
+findtime = 600
+maxretry = 3
