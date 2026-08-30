@@ -136,11 +136,13 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 
 ### Решение:  
 
-1.
+1. Если защита выключена:  
+
+<img width="1588" height="255" alt="image" src="https://github.com/user-attachments/assets/cbce2a19-e9f8-4af0-8353-d4f03cfbe95c" />
 
 
+2. Защита включена:  
 
-2. 
 <img width="677" height="241" alt="image" src="https://github.com/user-attachments/assets/91d2097e-8a12-4fb8-b4b8-94e1abaa53c5" />
 
 <img width="678" height="248" alt="image" src="https://github.com/user-attachments/assets/4127b350-1fc8-47c4-ae91-f1fddf5dc087" />
@@ -149,4 +151,4 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 
 <img width="1333" height="261" alt="image" src="https://github.com/user-attachments/assets/57f34f80-c6be-4392-a60b-45dacd5b43e5" />
 
-Строка WARNING [suricata] 10.0.2.6 already banned подтверждает, что атакующий хост превысил лимит попыток (maxretry) в первые секунды атаки. Fail2ban заблокировал его на уровне брандмауэра.
+Строка WARNING [suricata] 10.0.2.6 already banned подтверждает, что атакующий хост превысил лимит попыток (maxretry) в первые секунды атаки. Fail2ban заблокировал его на уровне брандмауэра.  
