@@ -98,6 +98,12 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
 
+2026-08-31 02:11:14,941 fail2ban.filter         [35663]: INFO    [suricata] Found 10.0.2.4 - 2026-08-31 02:11:14
+2026-08-31 02:11:15,030 fail2ban.actions        [35663]: WARNING [suricata] 10.0.2.4 already banned
+2026-08-31 02:11:15,176 fail2ban.filter         [35663]: INFO    [suricata] Found 10.0.2.4 - 2026-08-31 02:11:15
+2026-08-31 02:11:15,237 fail2ban.actions        [35663]: WARNING [suricata] 10.0.2.4 already banned
+
+<img width="1212" height="643" alt="image" src="https://github.com/user-attachments/assets/6f056fb7-7bfb-4a47-ae32-baa349c9349e" />
 
 ------
 
