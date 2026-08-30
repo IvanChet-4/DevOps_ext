@@ -103,6 +103,10 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 2026-08-31 02:11:15,176 fail2ban.filter         [35663]: INFO    [suricata] Found 10.0.2.4 - 2026-08-31 02:11:15  
 2026-08-31 02:11:15,237 fail2ban.actions        [35663]: WARNING [suricata] 10.0.2.4 already banned  
 
+Строки WARNING [suricata] 10.0.2.4 already banned («уже заблокирован») — nmap продолжал слать последующие пакеты для разведки (например, пытаясь определить версии служб с помощью -sV), система их уже не пропускала.   
+Хост был изолирован на сетевом уровне, что полностью ослепило атакующего.
+
+
 <img width="1212" height="643" alt="image" src="https://github.com/user-attachments/assets/6f056fb7-7bfb-4a47-ae32-baa349c9349e" />
 
 ------
