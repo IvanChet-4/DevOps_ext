@@ -28,8 +28,11 @@
 
 Обе системы должны находится в одной подсети.
 
-<img width="848" height="592" alt="image" src="https://github.com/user-attachments/assets/122b5ac2-571d-442c-9572-127fa06eb291" />
+Настроил подсеть
+<img width="820" height="228" alt="image" src="https://github.com/user-attachments/assets/e9302c08-8b67-494e-85ca-9a40f19c9a2b" />
 
+Установил Kali
+<img width="1612" height="627" alt="image" src="https://github.com/user-attachments/assets/c2826ee0-190c-4da6-b141-7730018371aa" />
 
 ------
 
