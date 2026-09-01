@@ -169,3 +169,5 @@ Nmap done: 1 IP address (1 host up) scanned in 6.39 seconds
 <img width="1333" height="261" alt="image" src="https://github.com/user-attachments/assets/57f34f80-c6be-4392-a60b-45dacd5b43e5" />
 
 Строка WARNING [suricata] 10.0.2.6 already banned подтверждает, что атакующий хост превысил лимит попыток (maxretry) в первые секунды атаки. Fail2ban заблокировал его на уровне брандмауэра.  
+
+<img width="1586" height="823" alt="image" src="https://github.com/user-attachments/assets/51b563f0-d890-43f9-8e56-fdb7bfa62143" />
