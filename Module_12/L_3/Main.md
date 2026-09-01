@@ -8,7 +8,21 @@
 1. Подготовка защищаемой системы:
 
 - установите **Suricata**,
+
+<img width="1515" height="591" alt="image" src="https://github.com/user-attachments/assets/a27804d4-c02d-4cea-afdb-0fe4cf67c9a8" />
+
+
 - установите **Fail2Ban**.
+
+<img width="1519" height="504" alt="image" src="https://github.com/user-attachments/assets/85023884-e0f4-40b2-96db-1c5ea1f04e11" />
+
+
+Вывод с term.log
+
+<img width="1241" height="575" alt="image" src="https://github.com/user-attachments/assets/74374626-5b24-447a-ac48-c2443cd94cba" />
+
+<img width="1485" height="809" alt="image" src="https://github.com/user-attachments/assets/ee7872bd-0111-46f5-910c-7f607981f1a5" />
+
 
 2. Подготовка системы злоумышленника: установите **nmap** и **thc-hydra** либо скачайте и установите **Kali linux**.
 
