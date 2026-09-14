@@ -42,6 +42,12 @@
 Протестируйте сайт
 `curl -v <публичный IP балансера>:80` 
 
+
+<img width="1230" height="585" alt="12" src="https://github.com/user-attachments/assets/f755280c-2294-452f-9f81-4bbd465c9b7d" />
+
+<img width="931" height="860" alt="11" src="https://github.com/user-attachments/assets/4165da17-2e23-4eb8-ad4d-fc3e013cab60" />
+
+
 ### Мониторинг
 Создайте ВМ, разверните на ней Prometheus. На каждую ВМ из веб-серверов установите Node Exporter и [Nginx Log Exporter](https://github.com/martin-helmich/prometheus-nginxlog-exporter). Настройте Prometheus на сбор метрик с этих exporter.
 
