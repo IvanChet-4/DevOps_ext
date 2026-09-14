@@ -1,0 +1,214 @@
+---
+# ==================== ЭТАП 1: УСТАНОВКА DOCKER НА ВСЕ ВМ ====================
+- name: Install Docker Engine on all infrastructure nodes
+  hosts: grafana:elasticsearch:kibana:webservers:prometheus
+  become: true
+  tasks:
+    - name: Remove broken docker repository from sources.list.d
+      file:
+        path: /etc/apt/sources.list.d/docker.list
+        state: absent
+
+    - name: Ensure any manual faulty docker lines are removed from main sources.list
+      replace:
+        path: /etc/apt/sources.list
+        regexp: '^deb .*docker\.com.*'
+        replace: ''
+
+    - name: Purge any specific automatic docker list files
+      file:
+        path: /etc/apt/sources.list.d/docker_com.list
+        state: absent
+
+    - name: Update apt cache and install prerequisites
+      apt:
+        update_cache: true
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        state: present
+
+    - name: Create directory for Docker APT key
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Download Docker official GPG key
+      get_url:
+        url:  https://download.docker.com/linux/ubuntu/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        mode: '0644'
+
+    - name: Add Docker stable repository to Apt sources
+      apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu {{ ansible_facts['distribution_release'] }} stable"
+        state: present
+        filename: docker
+
+
+    - name: Install Docker CE and Docker Compose plugin
+      apt:
+        update_cache: true
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: present
+
+    - name: Ensure Docker service is running and enabled
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+# ==================== ЭТАП 2: РАЗВЕРТЫВАНИЕ GRAFANA ====================
+- name: Deploy Grafana Container
+  hosts: grafana
+  become: true
+  tasks:
+    - name: Start Grafana docker container
+      community.docker.docker_container:
+        name: grafana
+        image: grafana/grafana:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "3000:3000"
+        volumes:
+          - grafana-storage:/var/lib/grafana
+
+# ==================== ЭТАП 3: РАЗВЕРТЫВАНИЕ ELASTICSEARCH ====================
+- name: Deploy Elasticsearch Container
+  hosts: elasticsearch
+  become: true
+  tasks:
+    - name: Clean faulty sysctl entries from sysctl.conf inside VM
+      replace:
+        path: /etc/sysctl.conf
+        regexp: '^sysctl\.vm\.max_map_count.*'
+        replace: ''
+
+    - name: Configure virtual memory vm.max_map_count (Required for ES)
+      ansible.posix.sysctl:
+        name: vm.max_map_count
+        value: '262144'
+        state: present
+        reload: true
+
+    - name: Start Elasticsearch docker container
+      community.docker.docker_container:
+        name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+        state: started
+        restart_policy: always
+        ports:
+          - "9200:9200"
+          - "9300:9300"
+        env:
+          discovery.type: "single-node"
+          xpack.security.enabled: "false"
+          ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+        volumes:
+          - es-data:/usr/share/elasticsearch/data
+
+# ==================== ЭТАП 4: РАЗВЕРТЫВАНИЕ KIBANA ====================
+- name: Deploy Kibana Container
+  hosts: kibana
+  become: true
+  tasks:
+    - name: Start Kibana docker container
+      community.docker.docker_container:
+        name: kibana
+        image: docker.elastic.co/kibana/kibana:8.12.0
+        state: started
+        restart_policy: always
+        ports:
+          - "5601:5601"
+        env:
+          ELASTICSEARCH_HOSTS: "http://{{ hostvars['elasticsearch-server']['ansible_host'] }}:9200"
+
+
+# ==================== НАСТРОЙКА ВЕБ-СЕРВЕРОВ (NGINX + EXPORTERS + FILEBEAT) ====================
+- name: Configure Web Servers
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Install Nginx natively
+      apt:
+        update_cache: true
+        name: nginx
+        state: present
+
+    - name: Start Node Exporter in Docker
+      community.docker.docker_container:
+        name: node-exporter
+        image: prom/node-exporter:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "9100:9100"
+
+    - name: Start Nginx Log Exporter in Docker
+      community.docker.docker_container:
+        name: nginx-exporter
+        image: sophos/nginx-vts-exporter:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "4040:4040"
+
+    # Конфигурируем директорию для настроек filebeat на хосте
+    - name: Create Filebeat config directory on host
+      file:
+        path: /etc/filebeat
+        state: directory
+        mode: '0755'
+
+    - name: Copy Filebeat configuration template
+      template:
+        src: filebeat.yml.j2
+        dest: /etc/filebeat/filebeat.yml
+        mode: '0644'
+
+    # Разворачиваем Filebeat в Docker, монтируя логи хостового Nginx внутрь контейнера
+    - name: Start Filebeat in Docker
+      community.docker.docker_container:
+        name: filebeat
+        image: docker.elastic.co/beats/filebeat:8.12.0
+        state: started
+        restart_policy: always
+        user: "root"
+        volumes:
+          - /etc/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+          - /var/log/nginx:/var/log/nginx:ro
+          - /var/lib/docker/containers:/var/lib/docker/containers:ro
+
+# ==================== КОРРЕКТИРОВКА ПРОМЕТЕУСА ====================
+# Модернизируем прошлый таск Prometheus, чтобы закинуть внутрь конфиг
+- name: Deploy Prometheus Container
+  hosts: prometheus
+  become: true
+  tasks:
+    - name: Create config directory
+      file:
+        path: /etc/prometheus
+        state: directory
+
+    - name: Copy Prometheus Config
+      template:
+        src: prometheus.yml.j2
+        dest: /etc/prometheus/prometheus.yml
+
+    - name: Start Prometheus docker container
+      community.docker.docker_container:
+        name: prometheus
+        image: prom/prometheus:latest
+        restart_policy: always
+        ports: ["9090:9090"]
+        volumes:
+          - /etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
