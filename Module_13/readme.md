@@ -53,10 +53,24 @@
 
 Создайте ВМ, установите туда Grafana. Настройте её на взаимодействие с ранее развернутым Prometheus. Настройте дешборды с отображением метрик, минимальный набор — Utilization, Saturation, Errors для CPU, RAM, диски, сеть, http_response_count_total, http_response_size_bytes. Добавьте необходимые [tresholds](https://grafana.com/docs/grafana/latest/panels/thresholds/) на соответствующие графики.
 
+```
+Добавил шаблоны для мониторинга с официального сайта [Grafana Dashboards](https://grafana.com/grafana/dashboards/)
+```
+
+<img width="1826" height="1011" alt="6" src="https://github.com/user-attachments/assets/7463996f-c207-4701-a440-e46357e16b9a" />
+
+<img width="1864" height="1011" alt="7" src="https://github.com/user-attachments/assets/22b098f8-4a58-442e-86f6-547439533d48" />
+
+
 ### Логи
 Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
 
 Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
+
+<img width="1890" height="898" alt="9" src="https://github.com/user-attachments/assets/77d27a95-01ae-494e-a264-6ee5f704d1c6" />
+
+<img width="1905" height="1004" alt="10" src="https://github.com/user-attachments/assets/e0cb647a-f38c-4843-9e61-53ae97ca32ed" />
+
 
 ### Сеть
 Разверните один VPC. Сервера web, Prometheus, Elasticsearch поместите в приватные подсети. Сервера Grafana, Kibana, application load balancer определите в публичную подсеть.
