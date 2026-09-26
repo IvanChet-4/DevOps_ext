@@ -40,12 +40,12 @@
 2. Создайте публичный репозиторий, который будете использовать дальше на протяжении всего курса, желательное с названием `devops-netology`.
    Обязательно поставьте галочку `Initialize this repository with a README`. 
    
-    ![Диалог создания репозитория](img/github-new-repo-1.jpg)
+<img width="1500" height="1495" alt="image" src="https://github.com/user-attachments/assets/5951b881-e888-4bc1-9d52-eb9c0d277683" />
     
 3. Создайте [авторизационный токен](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) для клонирования репозитория.
 4. Склонируйте репозиторий, используя протокол HTTPS (`git clone ...`).
  
-    ![Клонирование репозитория](img/github-clone-repo-https.jpg)
+<img width="1858" height="965" alt="image" src="https://github.com/user-attachments/assets/9cd73f37-fe5a-4219-a7b4-331660f7c115" />
     
 5. Перейдите в каталог с клоном репозитория (`cd devops-netology`).
 6. Произведите первоначальную настройку Git, указав своё настоящее имя, чтобы нам было проще общаться, и email (`git config --global user.name` и `git config --global user.email johndoe@example.com`). 
