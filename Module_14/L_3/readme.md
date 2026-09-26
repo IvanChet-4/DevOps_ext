@@ -137,7 +137,8 @@ echo "====="
 Если всё было сделано правильно, то на странице `network` в GitHub, находящейся по адресу 
 `https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ/network`, будет примерно такая схема:
   
-![Созданы обе ветки](img/01.png)
+<img width="318" height="269" alt="image" src="https://github.com/user-attachments/assets/571c38a0-780d-405e-a71b-9de045e28341" />
+
 
 #### Merge
 
@@ -158,7 +159,8 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 
 В результате получаем такую схему:
   
-![Первый мерж](img/02.png)
+<img width="345" height="275" alt="image" src="https://github.com/user-attachments/assets/b86bd18d-bdbd-4c70-bc53-0d2322ed9b08" />
+
 
 #### Rebase
 
