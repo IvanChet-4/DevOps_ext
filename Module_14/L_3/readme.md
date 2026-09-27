@@ -300,3 +300,22 @@ Fast-forward
 
 * задание выполнено частично или не выполнено вообще;
 * в логике выполнения заданий есть противоречия и существенные недостатки.
+
+## Решение:
+
+Создал каталог M14-L3 вместо branching и в нём два файла — merge.sh и rebase.sh с указанным в задании содержимым. Создал коммит с описанием prepare for merge and rebase и отправил его в ветку main. 
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-57-19" src="https://github.com/user-attachments/assets/ccb5a48b-0f56-4cbc-8dcf-94a3fbcfa9d4" />
+
+Создал ветку git-merge, заменил в ней содержимое файла merge.sh на указанное в задании. Создал коммит merge: @ instead *, отправил изменения в репозиторий.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-03-26" src="https://github.com/user-attachments/assets/d0578507-60aa-42b4-8405-27332b365f98" />
+
+Добавил изменение в merge.sh. Создал коммит merge: use shift и отправил изменения в репозиторий.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-04-48" src="https://github.com/user-attachments/assets/12350425-c2ce-4725-920d-7b4c43ba61b9" />
+
+Вернулся в ветку main. Изменил содержимое файла rebase.sh по заданию. Отправил изменённую ветку main в репозиторий.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-06-41" src="https://github.com/user-attachments/assets/bb7bd5a3-606a-4aaf-8679-f7393d11be43" />
+
