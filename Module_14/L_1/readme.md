@@ -110,3 +110,47 @@
 
 * задание выполнено частично или не выполнено вообще;
 * в логике выполнения заданий есть противоречия и существенные недостатки.
+
+## Решение:  
+
+Создание репозитория:  
+
+<img width="1805" height="964" alt="1" src="https://github.com/user-attachments/assets/567830b1-16c4-4a73-9bc3-1e91798b1272" />
+
+Создание токена:  
+
+<img width="1813" height="966" alt="2" src="https://github.com/user-attachments/assets/6fde8fa8-8808-4124-b0ed-818c26d848c4" />
+
+Ссылка для клонирования репозитория:
+
+<img width="1809" height="906" alt="3" src="https://github.com/user-attachments/assets/340171cb-231b-4362-96a5-744e1b987300" />
+
+Git config:
+
+<img width="1821" height="1032" alt="4" src="https://github.com/user-attachments/assets/5048f472-1557-4fbe-a2f3-66ea21f5c3a4" />
+
+Git status:
+
+<img width="3642" height="2064" alt="5" src="https://github.com/user-attachments/assets/8763f7e6-04b1-4e48-bce8-4210e6a0c7fe" />
+
+`Test commit`:
+
+<img width="3642" height="2064" alt="6" src="https://github.com/user-attachments/assets/b59c4e46-459f-4cc7-8d61-32cc24f5b1e3" />
+
+`Add comment in readme`:
+
+<img width="3642" height="2064" alt="7" src="https://github.com/user-attachments/assets/9f64bc74-bad6-4ada-9065-f320fe09f866" />
+
+<img width="3642" height="2064" alt="8" src="https://github.com/user-attachments/assets/9e651e81-fa8b-4f68-9c8a-fd8d810ba7ec" />
+
+`Added gitignore`:
+
+<img width="3642" height="2064" alt="9" src="https://github.com/user-attachments/assets/68d05867-2557-4926-8214-b5bc5f810687" />
+
+`Moved and deleted`:
+
+<img width="3642" height="2064" alt="10" src="https://github.com/user-attachments/assets/22752876-cfc6-48f5-af4c-774bc38ce8a0" />
+
+git log:
+
+<img width="3642" height="2064" alt="11" src="https://github.com/user-attachments/assets/49c54850-9986-4577-8343-f9e609598ac7" />
