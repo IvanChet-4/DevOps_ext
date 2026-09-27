@@ -319,3 +319,31 @@ Fast-forward
 
 <img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-06-41" src="https://github.com/user-attachments/assets/bb7bd5a3-606a-4aaf-8679-f7393d11be43" />
 
+При помощи команды git log нашел хеш коммита prepare for merge and rebase и выполнил git checkout на него. Создал ветку git-rebase, основываясь на текущем коммите. 
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-09-21" src="https://github.com/user-attachments/assets/41b5e1c7-59e5-46c6-90a8-fd9d7d6ca146" />
+
+Изменим содержимое файла rebase.sh по заданию. Отправил эти изменения в ветку git-rebase с комментарием git-rebase 1
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-11-25" src="https://github.com/user-attachments/assets/6db32881-5087-4cda-9db1-426731cb1ff3" />
+
+
+Сделал ещё один коммит git-rebase 2 с пушем, заменив echo "Parameter: $param" на echo "Next parameter: $param".
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-13-59" src="https://github.com/user-attachments/assets/0bcd5977-b460-4451-a5d3-481afedc23c9" />
+
+Сливаем ветку git-merge в main и отправляем изменения в репозиторий.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-14-58" src="https://github.com/user-attachments/assets/cc22e831-7b21-4fde-8318-9848f05270e3" />
+
+Перед мержем ветки git-rebase выполнил её rebase на main. Переключился на ветку git-rebase и выполнил git rebase -i main. В открывшемся диалоговом окне видны два выполненных коммита, слева от нижнего поставил fixup (или f). 
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-16-28" src="https://github.com/user-attachments/assets/7edca07b-f9e0-44f4-89d4-37e42eb71ff5" />
+
+<img width="1135" height="319" alt="image" src="https://github.com/user-attachments/assets/12136ed9-f294-4597-ab14-9b46be484d2b" />
+
+Удалил метки, отдав предпочтение варианту:
+echo "\$@ Parameter #$count = $param"
+Выполнил git add rebase.sh и далее rebase git rebase --continue.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-25-36" src="https://github.com/user-attachments/assets/6648e997-fdff-46f1-963a-3895dad0ce59" />
