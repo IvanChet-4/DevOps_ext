@@ -303,47 +303,63 @@ Fast-forward
 
 ## Решение:
 
-Создал каталог M14-L3 вместо branching и в нём два файла — merge.sh и rebase.sh с указанным в задании содержимым. Создал коммит с описанием prepare for merge and rebase и отправил его в ветку main. 
+Создал каталог branching и в нём два файла — merge.sh и rebase.sh с указанным в задании содержимым. Создал коммит с описанием prepare for merge and rebase и отправил его в ветку main. 
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-57-19" src="https://github.com/user-attachments/assets/ccb5a48b-0f56-4cbc-8dcf-94a3fbcfa9d4" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-30-07" src="https://github.com/user-attachments/assets/de0e0ccb-0650-48d3-916d-44053fbfb51c" />
 
 Создал ветку git-merge, заменил в ней содержимое файла merge.sh на указанное в задании. Создал коммит merge: @ instead *, отправил изменения в репозиторий.
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-03-26" src="https://github.com/user-attachments/assets/d0578507-60aa-42b4-8405-27332b365f98" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-33-25" src="https://github.com/user-attachments/assets/ddcad8f9-5d71-46db-ad8e-9003792e37ef" />
 
 Добавил изменение в merge.sh. Создал коммит merge: use shift и отправил изменения в репозиторий.
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-04-48" src="https://github.com/user-attachments/assets/12350425-c2ce-4725-920d-7b4c43ba61b9" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-34-44" src="https://github.com/user-attachments/assets/c4e7d7b0-ba7c-4d37-a6f1-e7224956ca9f" />
 
 Вернулся в ветку main. Изменил содержимое файла rebase.sh по заданию. Отправил изменённую ветку main в репозиторий.
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-06-41" src="https://github.com/user-attachments/assets/bb7bd5a3-606a-4aaf-8679-f7393d11be43" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-36-51" src="https://github.com/user-attachments/assets/f81939e7-d8d4-480f-b29e-767cb14948c6" />
 
-При помощи команды git log нашел хеш коммита prepare for merge and rebase и выполнил git checkout на него. Создал ветку git-rebase, основываясь на текущем коммите. 
+При помощи команды git log нашел хеш коммита prepare for merge and rebase и выполнил git checkout на него. 
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-09-21" src="https://github.com/user-attachments/assets/41b5e1c7-59e5-46c6-90a8-fd9d7d6ca146" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-39-11" src="https://github.com/user-attachments/assets/99f3a56c-2435-4e28-902c-9dc92a23d868" />
 
-Изменим содержимое файла rebase.sh по заданию. Отправил эти изменения в ветку git-rebase с комментарием git-rebase 1
+Создал ветку git-rebase, основываясь на текущем коммите. Изменим содержимое файла rebase.sh по заданию. Отправил эти изменения в ветку git-rebase с комментарием git-rebase 1
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-11-25" src="https://github.com/user-attachments/assets/6db32881-5087-4cda-9db1-426731cb1ff3" />
-
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-40-43" src="https://github.com/user-attachments/assets/430afc8c-2bc2-4c4c-a038-7648af0ddd38" />
 
 Сделал ещё один коммит git-rebase 2 с пушем, заменив echo "Parameter: $param" на echo "Next parameter: $param".
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-13-59" src="https://github.com/user-attachments/assets/0bcd5977-b460-4451-a5d3-481afedc23c9" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-42-56" src="https://github.com/user-attachments/assets/84fa7a12-e13c-44b3-a86e-0c347032442a" />
 
 Сливаем ветку git-merge в main и отправляем изменения в репозиторий.
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-14-58" src="https://github.com/user-attachments/assets/cc22e831-7b21-4fde-8318-9848f05270e3" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-45-18" src="https://github.com/user-attachments/assets/2b80838f-2d3f-4486-8ca2-861095cdba36" />
 
 Перед мержем ветки git-rebase выполнил её rebase на main. Переключился на ветку git-rebase и выполнил git rebase -i main. В открывшемся диалоговом окне видны два выполненных коммита, слева от нижнего поставил fixup (или f). 
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-16-28" src="https://github.com/user-attachments/assets/7edca07b-f9e0-44f4-89d4-37e42eb71ff5" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-48-07" src="https://github.com/user-attachments/assets/32e8086e-5495-43b8-a70a-ee284c7a80db" />
 
-<img width="1135" height="319" alt="image" src="https://github.com/user-attachments/assets/12136ed9-f294-4597-ab14-9b46be484d2b" />
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-48-46" src="https://github.com/user-attachments/assets/6fee1905-28f1-4afd-ab4e-0340d1ac4c53" />
 
-Удалил метки, отдав предпочтение варианту:
-echo "\$@ Parameter #$count = $param"
-Выполнил git add rebase.sh и далее rebase git rebase --continue.
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-49-20" src="https://github.com/user-attachments/assets/b7191a60-65ff-4cdb-b6ee-b4da09dcb696" />
 
-<img width="3642" height="2064" alt="Screenshot From 2026-09-27 22-25-36" src="https://github.com/user-attachments/assets/6648e997-fdff-46f1-963a-3895dad0ce59" />
+Удалил метки. Выполнил git add rebase.sh и далее rebase git rebase --continue.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-50-54" src="https://github.com/user-attachments/assets/4e223c82-e101-43d8-84c6-4158bcd892e8" />
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-51-15" src="https://github.com/user-attachments/assets/101bbaf7-31b9-4660-8e55-0fe10bf0d041" />
+
+Удалил метки. Выполнил git add rebase.sh и далее rebase git rebase --continue.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-51-54" src="https://github.com/user-attachments/assets/239498e7-6241-4399-83e7-62ba96ddbeaf" />
+
+Удалил метки. Выполнил git add rebase.sh и далее rebase git rebase --continue.
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-53-20" src="https://github.com/user-attachments/assets/32d140df-6d7e-4641-85b2-85348b754c44" />
+
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-54-31" src="https://github.com/user-attachments/assets/9951133b-f946-4f3b-be25-45d04bb02970" />
+
+
+
+
