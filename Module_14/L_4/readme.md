@@ -50,3 +50,52 @@
 
 * задание выполнено частично или не выполнено вообще;
 * в логике выполнения заданий есть противоречия и существенные недостатки.
+
+
+## Решение:
+
+Сделал git clone на указанный репозиторий
+
+<img width="1018" height="229" alt="image" src="https://github.com/user-attachments/assets/62f1e967-6473-4bb8-8d7a-ef94528c3ab4" />
+
+Нашел полный хеш и комментарий коммита, хеш которого начинается на `aefea`. Тег коммита 85024d3.  
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-25-53" src="https://github.com/user-attachments/assets/cdf0fa38-fd6f-4922-ba3d-9f51a5f6a044" />
+
+Сколько родителей у коммита `b8d720`- два, на скриншоте изображены через пробел.
+
+```
+56cd7859e05c36c06b56d013b55a252d0bb7e158
+9ea88f22fc6269854151c571162c5bcf958bee2b
+```
+
+На скриншоте изображены хеши и комментарии всех коммитов, которые были сделаны между тегами  v0.12.23 и v0.12.24.
+ 
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-30-05" src="https://github.com/user-attachments/assets/ad045d26-7fe8-438f-aa5f-ec95169796dd" />
+
+Все коммиты, в которых была изменена функция `globalPluginDirs`на скриншоте.  
+
+```
+7c4aeac5f3
+65c4ba7363
+125eb51dc4
+22c121df86
+7c7e5d8f0a
+35a058fb3d
+c0b1761096
+8364383c35
+```
+
+Коммит, в котором была создана функция `func providerSource`, и её определение в коде выглядит так: `func providerSource(...)` (вместо троеточия перечислены аргументы), на скриншоте:
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-36-40" src="https://github.com/user-attachments/assets/fc5e891c-719a-46ba-abc1-43457c9609b2" />
+
+8c928e8358 - Коммит, в котором была создана функция func providerSource
+
+Кто автор функции `synchronizedWriters`? - Martin Atkins
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-38-47" src="https://github.com/user-attachments/assets/993877f7-9686-451d-b15b-5ceefcdf7835" />
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-40-49" src="https://github.com/user-attachments/assets/c5b3b025-b964-4590-bcb4-66d81fcc19d8" />
+
+<img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-42-23" src="https://github.com/user-attachments/assets/8a1504c4-5d9a-4393-8d98-bcbf35258fec" />
