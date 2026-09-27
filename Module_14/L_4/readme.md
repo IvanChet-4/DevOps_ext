@@ -58,7 +58,7 @@
 
 <img width="1018" height="229" alt="image" src="https://github.com/user-attachments/assets/62f1e967-6473-4bb8-8d7a-ef94528c3ab4" />
 
-Нашел полный хеш и комментарий коммита, хеш которого начинается на `aefea`. Тег коммита 85024d3.  
+Нашел полный хеш и комментарий коммита, хеш которого начинается на `aefea`.   
 
 <img width="3642" height="2064" alt="Screenshot From 2026-09-27 21-25-53" src="https://github.com/user-attachments/assets/cdf0fa38-fd6f-4922-ba3d-9f51a5f6a044" />
 
