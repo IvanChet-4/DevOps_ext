@@ -360,6 +360,9 @@ Fast-forward
 
 <img width="3642" height="2064" alt="Screenshot From 2026-09-28 01-54-31" src="https://github.com/user-attachments/assets/9951133b-f946-4f3b-be25-45d04bb02970" />
 
+скрин графа коммитов
 
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 21-48-23" src="https://github.com/user-attachments/assets/317c3ba5-398a-4c78-a271-bf523894600e" />
 
+<img width="3642" height="2064" alt="Screenshot From 2026-09-28 21-48-37" src="https://github.com/user-attachments/assets/75bcb4bd-81a4-4def-a70b-ad9682e93656" />
 
