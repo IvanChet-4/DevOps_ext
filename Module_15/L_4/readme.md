@@ -70,10 +70,15 @@
 
 ## Решение
 
-Установил terraform, исправил провайдера.
-Выправил переменные и сгенерировал ключи. init:  
+Установил terraform, исправил провайдера.  
+Выправил переменные и сгенерировал ключи.   
+init:  
 
 <img width="1608" height="791" alt="image" src="https://github.com/user-attachments/assets/4d78344b-f9cc-40c5-a65c-e4caeb3946dd" />
+
+plan:  
+
+<img width="1496" height="945" alt="image" src="https://github.com/user-attachments/assets/2efe1dcd-eed0-4f05-a8d7-dc7e27043aca" />
 
 
 ## Задача 3
