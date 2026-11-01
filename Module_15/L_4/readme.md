@@ -41,6 +41,9 @@
 
 <img width="1662" height="165" alt="image" src="https://github.com/user-attachments/assets/16732996-cd83-4b0c-b68c-d399cfaf453f" />
 
+Валидация:  
+
+<img width="1052" height="168" alt="image" src="https://github.com/user-attachments/assets/db565969-5f18-45de-ba15-00dde45071c5" />
 
 
 ## Задача 2
