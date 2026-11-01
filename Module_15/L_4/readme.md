@@ -45,6 +45,12 @@
 
 <img width="1052" height="168" alt="image" src="https://github.com/user-attachments/assets/db565969-5f18-45de-ba15-00dde45071c5" />
 
+Развернул:  
+
+<img width="1237" height="951" alt="image" src="https://github.com/user-attachments/assets/e26e14b2-5ce7-491f-9d87-7259663974c2" />
+  
+<img width="1377" height="942" alt="image" src="https://github.com/user-attachments/assets/f5e26d71-7d69-4466-b461-feb23bb003ee" />
+
 
 ## Задача 2
 
