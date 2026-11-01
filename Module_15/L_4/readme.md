@@ -31,6 +31,13 @@
 
 Чтобы получить зачёт, вам нужно предоставить скриншот страницы с созданным образом из личного кабинета YandexCloud.
 
+## Решение
+
+Установил packer версии ```Packer v1.16.2```
+
+<img width="1049" height="166" alt="image" src="https://github.com/user-attachments/assets/dae3cf16-fe07-42d6-b84e-96e8637bfb9d" />
+
+
 ## Задача 2
 
 **2.1.** Создайте вашу первую виртуальную машину в YandexCloud с помощью web-интерфейса YandexCloud.        
