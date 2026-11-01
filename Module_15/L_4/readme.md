@@ -51,6 +51,12 @@
   
 <img width="1377" height="942" alt="image" src="https://github.com/user-attachments/assets/f5e26d71-7d69-4466-b461-feb23bb003ee" />
 
+Скриншоты из ЛК:
+
+<img width="1431" height="814" alt="image" src="https://github.com/user-attachments/assets/f23e9b34-a41b-4024-914d-1a36b814f4a5" />
+
+<img width="1630" height="267" alt="image" src="https://github.com/user-attachments/assets/d3ff5c3f-ca92-449d-ae92-a15702675b93" />
+
 
 ## Задача 2
 
