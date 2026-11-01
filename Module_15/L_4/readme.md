@@ -58,9 +58,9 @@
 Чтобы получить зачёт, предоставьте: 
 
 - скриншот работающего веб-интерфейса Grafana с текущими метриками, как на примере ниже.
-<p align="center">
-  <img width="1200" height="600" src="./assets/yc_02.png">
-</p>
+- 
+<img width="3360" height="1982" alt="image" src="https://github.com/user-attachments/assets/34ff4043-d76a-4159-9eb0-f5c58e20513d" />
+
 
 ## Задача 5 (*)
 
