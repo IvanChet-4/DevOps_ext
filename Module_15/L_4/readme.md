@@ -68,6 +68,14 @@
 
 Чтобы получить зачёт, вам нужно предоставить вывод команды terraform apply и страницы свойств, созданной ВМ из личного кабинета YandexCloud.
 
+## Решение
+
+Установил terraform, исправил провайдера.
+Выправил переменные и сгенерировал ключи. init:  
+
+<img width="1608" height="791" alt="image" src="https://github.com/user-attachments/assets/4d78344b-f9cc-40c5-a65c-e4caeb3946dd" />
+
+
 ## Задача 3
 
 С помощью Ansible и Docker Compose разверните на виртуальной машине из предыдущего задания систему мониторинга на основе Prometheus/Grafana.
