@@ -33,9 +33,14 @@
 
 ## Решение
 
-Установил packer версии ```Packer v1.16.2```
+Установил packer версии ```Packer v1.16.2``` :  
 
 <img width="1049" height="166" alt="image" src="https://github.com/user-attachments/assets/dae3cf16-fe07-42d6-b84e-96e8637bfb9d" />
+
+Подготовил файл в соответствии с инструкцией и установил плагин ```Installed plugin github.com/hashicorp/yandex v1.1.3``` :  
+
+<img width="1662" height="165" alt="image" src="https://github.com/user-attachments/assets/16732996-cd83-4b0c-b68c-d399cfaf453f" />
+
 
 
 ## Задача 2
