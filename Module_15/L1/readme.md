@@ -32,7 +32,6 @@ Hey, Netology
 
 Установил docker и docker compose plugin на ВМ.  
 
-<br>
 Зарегистрировался в докер хаб и создал репозиторий <br>
 <b> https://hub.docker.com/repository/docker/4ivan/custom-nginx </b> <br>
 Затем скачал к себе образ nginx, запустил docker build <br>
