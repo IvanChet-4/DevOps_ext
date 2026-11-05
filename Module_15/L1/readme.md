@@ -34,10 +34,8 @@ Hey, Netology
 
 Зарегистрировался в докер хаб и создал репозиторий <br>
 <b> https://hub.docker.com/repository/docker/4ivan/custom-nginx </b> <br>
-Затем скачал к себе образ nginx, запустил docker build <br>
- 
-Сам [Dockerfile](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L1/Dockerfile)  
-  
+Создал [Dockerfile](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L1/Dockerfile)  
+Запустил docker build <br>
 Сделал docker commit измененного контейнера, присвоил ему тег с помощью docker tag и отправил получившийся образ в свой репозиторий через docker push  
 <b> https://hub.docker.com/repository/docker/4ivan/custom-nginx/general </b><br>
 Теперь скачать мой образ можно при помощи команды:<br>
