@@ -369,6 +369,8 @@ docker compose up -d
 /home/user7/netology/docker/task5/compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
 ```
 
+Будет запущен файл compose.yaml по приоритету.  
+
 Указание версии является избыточным и может привести к появлению предупреждений т.к. Docker Compose по умолчанию использует последнюю спецификацию Compose.<br>
 <br>
 Изменили compose.yaml согласно рекомендации в предупреждении и подсказки в задании:<br>
