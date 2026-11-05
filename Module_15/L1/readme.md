@@ -62,7 +62,7 @@ docker pull 4ivan/custom-nginx
 Для запуска контейнера: <br> 
 
 ```
-docker run --name ichetverkin-custom-nginx-t2 -p 8080:80 -e TERM=xterm -d custom-nginx-t2
+docker run --name ichetverkin-custom-nginx-t2 -p 127.0.0.1:8080:80 -e TERM=xterm -d custom-nginx-t2
 ```
 
 ![Запуск контейнера](https://github.com/IvanChet-4/Dev/blob/main/images/Homework%201-3/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0.png)
