@@ -28,18 +28,15 @@ Hey, Netology
 - Соберите и отправьте созданный образ в свой dockerhub-репозитории c tag 1.0.0 (ТОЛЬКО ЕСЛИ ЕСТЬ ДОСТУП). 
 - Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
 
-## Решение
+## Решение  
+
+Установил docker и docker compose plugin на ВМ.  
 
 <br>
 Зарегистрировался в докер хаб и создал репозиторий <br>
 <b> https://hub.docker.com/repository/docker/4ivan/custom-nginx </b> <br>
-Затем скачал к себе образ nginx, запустил docker container и изменил в нем страничку index.html <br>
-Для замены страницы использовал: <br>
-
-```
-cp index.html aac9755eea9b:/usr/share/nginx/html/index.html
-```
-  
+Затем скачал к себе образ nginx, запустил docker build <br>
+ 
 Сам [Dockerfile](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L1/Dockerfile)  
   
 Сделал докер коммит и отправил измененный контейнер в свой репозиторий <br>
