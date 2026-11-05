@@ -372,7 +372,7 @@ docker compose up -d
 
 ```
 include:
-  - docker-compose.yaml
+  - path: ./docker-compose.yaml
 services:
   portainer:
     network_mode: host
