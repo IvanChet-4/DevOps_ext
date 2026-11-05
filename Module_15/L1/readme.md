@@ -391,8 +391,7 @@ apt install docker-registry
 Выполняем команды:<br>
 
 ```
-docker run -d -p 5000:5000 --restart=always --name registry registry:2
-docker tag custom-nginx-t2 127.0.0.1:5000/custom-nginx:latest
+docker compose up -d
 ```
 
 ![Локальный registry](https://github.com/IvanChet-4/Dev/blob/main/images/Homework%201-3/%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20registry.png)
