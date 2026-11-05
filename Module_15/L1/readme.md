@@ -38,7 +38,7 @@ Hey, Netology
  
 Сам [Dockerfile](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L1/Dockerfile)  
   
-Сделал докер коммит и отправил измененный контейнер в свой репозиторий <br>
+Сделал doker tag и отправил при помощи doker push измененный контейнер в свой репозиторий <br>
 <b> https://hub.docker.com/repository/docker/4ivan/custom-nginx/general </b><br>
 Теперь скачать мой образ можно при помощи команды:<br>
 
