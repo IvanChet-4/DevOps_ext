@@ -356,15 +356,15 @@ user7@user7-MS-7D13:~/netology/docker/task5$ vi docker-compose.yaml
 docker compose up -d
 ```
 
+Будет запущен файл compose.yaml по приоритету.   
+
 ![Запуск команды](https://github.com/IvanChet-4/Dev/blob/main/images/Homework%201-3/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B.png)
 
 Получили предупреждение WARN[0000]:<br>
 
 ```
 /home/user7/netology/docker/task5/compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
-```
-
-Будет запущен файл compose.yaml по приоритету.  
+``` 
 
 Указание версии является избыточным и может привести к появлению предупреждений т.к. Docker Compose по умолчанию использует последнюю спецификацию Compose.<br>
 <br>
