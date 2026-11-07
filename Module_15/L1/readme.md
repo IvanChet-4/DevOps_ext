@@ -464,6 +464,8 @@ docker compose up -d --remove-orphans
 
 <img width="1192" height="496" alt="image" src="https://github.com/user-attachments/assets/c2243b90-e498-4bd4-b071-532a74fce68d" />
 
+Отправил образ из portainer в DockerHub
+
 <img width="1434" height="547" alt="image" src="https://github.com/user-attachments/assets/a202d213-b3ee-4da8-ad33-9e3c76c210b4" />
 
 
