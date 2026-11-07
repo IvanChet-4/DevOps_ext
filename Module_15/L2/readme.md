@@ -140,6 +140,9 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 
 <img width="877" height="598" alt="image" src="https://github.com/user-attachments/assets/37ea81a4-d7a3-4b26-8aa2-7e8e6ff07b1a" />
 
+<img width="691" height="272" alt="image" src="https://github.com/user-attachments/assets/5cf0a417-aa4e-40d4-a9ba-00ebcda23229" />
+
+<img width="444" height="363" alt="image" src="https://github.com/user-attachments/assets/4abc4d87-ffc7-4c3b-a61e-4a01465dcbcc" />
 
 
 ## Задача 4
