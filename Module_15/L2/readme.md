@@ -68,6 +68,7 @@ See 'snap info docker' for additional versions.
 
 <img width="1866" height="688" alt="image" src="https://github.com/user-attachments/assets/93636c3f-7683-4421-bdd9-a44ddec7d67f" />
 
+<img width="1849" height="126" alt="image" src="https://github.com/user-attachments/assets/f4260bb5-eaad-43df-9b2d-d46abb42a798" />
 
 ---
 ### ВНИМАНИЕ!
