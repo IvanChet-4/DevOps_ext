@@ -99,7 +99,6 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 <img width="966" height="119" alt="image" src="https://github.com/user-attachments/assets/be518644-e95e-4a7e-b7fe-034abe7b4c01" />
 
 
-
 ---
 ### ВНИМАНИЕ!
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
@@ -143,6 +142,10 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 <img width="691" height="272" alt="image" src="https://github.com/user-attachments/assets/5cf0a417-aa4e-40d4-a9ba-00ebcda23229" />
 
 <img width="444" height="363" alt="image" src="https://github.com/user-attachments/assets/4abc4d87-ffc7-4c3b-a61e-4a01465dcbcc" />
+
+6.
+
+<img width="1479" height="185" alt="image" src="https://github.com/user-attachments/assets/0734a390-c249-42e1-84a1-bb15d81c3a88" />
 
 
 ## Задача 4
