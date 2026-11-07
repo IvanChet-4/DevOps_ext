@@ -49,16 +49,16 @@ See 'snap info docker' for additional versions.
 
 ## Решение
 
-Сделал форк:  
+1. Сделал форк:  
 
 <img width="958" height="272" alt="image" src="https://github.com/user-attachments/assets/6119df22-90af-4530-add1-253e208b2992" />
 
-Создал файлы:  
+2. Создал файлы:  
 [Dockerfile.python](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/Dockerfile.python)  
 [.dockerignore](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/.dockerignore)  
 
  
-Сборка:  
+3. Сборка:  
 
 ```docker build -f Dockerfile.python -t my-python-app:latest .```  
 
@@ -90,7 +90,7 @@ uvicorn main:app --host 0.0.0.0 --port 5000
 
 <img width="1083" height="181" alt="image" src="https://github.com/user-attachments/assets/2cfa9d43-4fbc-4c10-9a71-18a612d0a45c" />
 
-Исправил main.py в репозитории назвал [main_table.py](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/main_table.py) :   
+4. Исправил main.py в репозитории назвал [main_table.py](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/main_table.py) :   
 
 ```
 docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
