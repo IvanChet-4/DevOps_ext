@@ -178,6 +178,11 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 
 Скрипт [test.sh](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/test.sh)
 
+```
+docker context create yc-vm --docker "host=ssh://ubuntu@51.250.86.18"
+docker context ls
+```
+
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
 2. Протестируйте ручной запуск
