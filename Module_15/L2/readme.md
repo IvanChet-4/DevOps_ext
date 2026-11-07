@@ -53,7 +53,11 @@ See 'snap info docker' for additional versions.
 
 <img width="958" height="272" alt="image" src="https://github.com/user-attachments/assets/6119df22-90af-4530-add1-253e208b2992" />
 
+Создал файлы:  
+[Dockerfile.python](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/Dockerfile.python)
+[.dockerignore](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/.dockerignore)
 
+Тест корректности сборки:  
 
 <img width="1869" height="733" alt="image" src="https://github.com/user-attachments/assets/55a5f767-bf4a-46bb-828e-ec1e05a4d2e8" />
 
