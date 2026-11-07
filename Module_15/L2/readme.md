@@ -158,7 +158,23 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 
 ## Решение
 
-<img width="730" height="142" alt="image" src="https://github.com/user-attachments/assets/96955098-4a85-4c49-8bdd-21597be24c6f" />
+<img width="654" height="128" alt="image" src="https://github.com/user-attachments/assets/1847485b-1de6-49c4-8efb-f4fe35ff0902" />
+
+<img width="1415" height="483" alt="image" src="https://github.com/user-attachments/assets/0631c564-5152-4c09-b58e-1bc9176600d2" />
+
+<img width="609" height="134" alt="image" src="https://github.com/user-attachments/assets/3de38831-241d-456d-9f99-e091b02f7a42" />
+
+<img width="1703" height="316" alt="image" src="https://github.com/user-attachments/assets/8318cfb7-6c63-4b10-b7e4-6fda9a2f8377" />
+
+<img width="813" height="225" alt="image" src="https://github.com/user-attachments/assets/dc60473e-9d12-4509-b6f2-807c5eb1f339" />
+
+<img width="1402" height="874" alt="image" src="https://github.com/user-attachments/assets/143f26ed-f52b-4fc5-9c17-5e133e002570" />
+
+<img width="1291" height="161" alt="image" src="https://github.com/user-attachments/assets/b320b346-dd0d-4cc6-a2a7-d4628ceafd7a" />
+
+<img width="1026" height="682" alt="image" src="https://github.com/user-attachments/assets/d448d5fb-bacd-4a42-909b-b3984027be58" />
+
+<img width="744" height="854" alt="image" src="https://github.com/user-attachments/assets/8caed9fb-7e64-42dc-be3e-bc394cd54135" />
 
 
 
