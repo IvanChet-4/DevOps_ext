@@ -456,6 +456,10 @@ docker compose up -d --remove-orphans
 ![Остановка](https://github.com/IvanChet-4/Dev/blob/main/images/Homework%201-3/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0.png
 )
 
+Повторил сборку образа приложения и установки portainer на другой ВМ
+
+
+
 ---
 
 ### Правила приема
