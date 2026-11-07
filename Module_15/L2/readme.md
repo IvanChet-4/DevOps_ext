@@ -187,3 +187,7 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
+
+<img width="1811" height="904" alt="image" src="https://github.com/user-attachments/assets/176113b5-c178-41c3-bf92-997f455dfb3a" />
+
+<img width="639" height="86" alt="image" src="https://github.com/user-attachments/assets/8c06b434-6e3f-4622-b814-012f7e07a673" />
