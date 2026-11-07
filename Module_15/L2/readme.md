@@ -191,3 +191,26 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 <img width="1811" height="904" alt="image" src="https://github.com/user-attachments/assets/176113b5-c178-41c3-bf92-997f455dfb3a" />
 
 <img width="639" height="86" alt="image" src="https://github.com/user-attachments/assets/8c06b434-6e3f-4622-b814-012f7e07a673" />
+
+```
+docker pull hashicorp/terraform:latest
+dive hashicorp/terraform:latest
+docker run --rm -it \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  wagoodman/dive:latest hashicorp/terraform:latest
+
+docker save hashicorp/terraform:latest | gzip > tf_image.tar.gz
+tar -ztf tf_image.tar.gz | grep layer.tar
+mkdir tf_extract && tar -zxf tf_image.tar.gz -C tf_extract
+cd tf_extract
+
+find . -type f -exec sh -c 'tar -tf "$1" 2>/dev/null | grep -q "terraform"' _ {} \; -print
+./blobs/sha256/b31c7f8fb200e48c18f2f1f189def5cd5d972a673186cf3bee026ac9071c2d80
+./blobs/sha256/2d664eecf5e7d017570e58c8cec8a8a65adff55b713f5f370bfddd22a0698cb6
+
+tar -xf ./blobs/sha256/b31c7f8fb200e48c18f2f1f189def5cd5d972a673186cf3bee026ac9071c2d80 bin/terraform 2>/dev/null || tar -xf ./blobs/sha256/b31c7f8fb200e48c18f2f1f189def5cd5d972a673186cf3bee026ac9071c2d80 terraform 2>/dev/null
+tar -xf ./blobs/sha256/2d664eecf5e7d017570e58c8cec8a8a65adff55b713f5f370bfddd22a0698cb6 bin/terraform 2>/dev/null || tar -xf ./blobs/sha256/2d664eecf5e7d017570e58c8cec8a8a65adff55b713f5f370bfddd22a0698cb6 terraform 2>/dev/null
+
+cd bin/
+./terraform version
+```
