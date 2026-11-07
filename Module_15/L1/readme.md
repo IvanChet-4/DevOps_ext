@@ -458,6 +458,13 @@ docker compose up -d --remove-orphans
 
 Повторил сборку образа приложения и установки portainer на другой ВМ
 
+<img width="1278" height="637" alt="image" src="https://github.com/user-attachments/assets/2483acde-64c7-4cba-830c-6d97c87a56b6" />
+
+<img width="1867" height="752" alt="image" src="https://github.com/user-attachments/assets/192f5dfe-fa5d-407d-b986-16fca41be001" />
+
+<img width="712" height="419" alt="image" src="https://github.com/user-attachments/assets/8c73cde0-4270-44ad-9083-8674b323ecdd" />
+
+<img width="1063" height="466" alt="image" src="https://github.com/user-attachments/assets/e57003b1-690e-4b92-bf50-a7f43a577d84" />
 
 
 ---
