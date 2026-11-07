@@ -130,11 +130,16 @@ docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
 
 ## Решение
 
-1-3 Создал файл [compose.yaml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/compose.yaml)
+1-3. Создал файл [compose.yaml](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_15/L2/compose.yaml)
 
-4 Запустил команду ```curl -L http://127.0.0.1:8090```
+4. Запустил команду ```curl -L http://127.0.0.1:8090```
 
 <img width="995" height="181" alt="image" src="https://github.com/user-attachments/assets/acea22fa-ea1f-4f74-9ffa-9f8f498f91e5" />
+
+5.
+
+<img width="877" height="598" alt="image" src="https://github.com/user-attachments/assets/37ea81a4-d7a3-4b26-8aa2-7e8e6ff07b1a" />
+
 
 
 ## Задача 4
