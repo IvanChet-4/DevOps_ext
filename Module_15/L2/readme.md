@@ -70,6 +70,27 @@ See 'snap info docker' for additional versions.
 
 <img width="1849" height="126" alt="image" src="https://github.com/user-attachments/assets/f4260bb5-eaad-43df-9b2d-d46abb42a798" />
 
+Запуск БД Mysql в docker run:  
+
+```
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=secret_pass -e MYSQL_DATABASE=app_db -p 3306:3306 -d mysql:8.0
+```
+
+Запуск web-приложения без использования docker, с помощью venv:  
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+export DB_HOST="127.0.0.1"
+export TABLE_NAME="custom_users_table" 
+uvicorn main:app --host 0.0.0.0 --port 5000
+```
+
+<img width="1083" height="181" alt="image" src="https://github.com/user-attachments/assets/2cfa9d43-4fbc-4c10-9a71-18a612d0a45c" />
+
+
 ---
 ### ВНИМАНИЕ!
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
