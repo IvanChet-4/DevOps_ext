@@ -90,6 +90,15 @@ uvicorn main:app --host 0.0.0.0 --port 5000
 
 <img width="1083" height="181" alt="image" src="https://github.com/user-attachments/assets/2cfa9d43-4fbc-4c10-9a71-18a612d0a45c" />
 
+Исправил : 
+
+```
+docker run -p 5000:5000 -e TABLE_NAME="user_logs" my-python-app:latest
+```
+
+<img width="966" height="119" alt="image" src="https://github.com/user-attachments/assets/be518644-e95e-4a7e-b7fe-034abe7b4c01" />
+
+
 
 ---
 ### ВНИМАНИЕ!
