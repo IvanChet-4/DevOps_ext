@@ -55,6 +55,17 @@
   
 2. Инициализируйте проект, выполните код.
 
+<img width="1589" height="703" alt="image" src="https://github.com/user-attachments/assets/8c3f0ff6-4db8-45fb-a375-e442a1031696" />
+
+<img width="928" height="264" alt="image" src="https://github.com/user-attachments/assets/93778788-9d78-4c62-bca1-243f4d87f826" />
+
+<img width="1340" height="360" alt="image" src="https://github.com/user-attachments/assets/1ba35224-653a-494d-a162-12439f4b98fb" />
+
+<img width="1606" height="277" alt="image" src="https://github.com/user-attachments/assets/1454642b-af70-441b-856b-9a4cd29035fd" />
+
+<img width="1457" height="732" alt="image" src="https://github.com/user-attachments/assets/223883e7-8f00-4d5e-8faa-f48c83fb939f" />
+
+<img width="1456" height="775" alt="image" src="https://github.com/user-attachments/assets/3b1fd006-0e1f-4067-a3f8-4b83a6f1ddbb" />
 
 
 ------
