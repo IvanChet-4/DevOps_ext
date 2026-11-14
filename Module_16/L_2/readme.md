@@ -116,11 +116,11 @@ Error: Error while waiting operation to create instance: operation (id=fhmj4bvgm
 
 [disk_vm.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_2/disk_vm.tf)
 
-<img width="1293" height="191" alt="image" src="https://github.com/user-attachments/assets/3b43b27f-d602-465b-9b6a-dd8be68a9c0d" />
+<img width="1364" height="514" alt="image" src="https://github.com/user-attachments/assets/01bc011c-bc41-4a05-a757-30c5749008e8" />
 
-<img width="1706" height="389" alt="image" src="https://github.com/user-attachments/assets/d0c588ae-06dc-4d84-8563-5bfa1c46808f" />
+<img width="1834" height="169" alt="image" src="https://github.com/user-attachments/assets/c5776c0c-6c40-4a9a-b95a-7c454c872ccb" />
 
-Error: Error while requesting API to create instance: x-request-id = 76c4fd7b-7573-4ad4-bcd6-85a09b983c93 x-server-trace-id = 641bb5a4e397eff8:4d8c8bf6cf7b2a93:dcaad176d96c5740:1 x-client-trace-id = ba28a9f9-b190-4354-9bbd-598df96baa98 rpc error: code = ResourceExhausted desc = The limit on total size of network-ssd disks has exceeded for zone "ru-central1-d".
+<img width="1813" height="437" alt="image" src="https://github.com/user-attachments/assets/70ea41b2-1763-4dbe-a74e-418caee10957" />
 
 ------
 
