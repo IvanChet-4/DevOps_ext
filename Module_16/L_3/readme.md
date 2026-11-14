@@ -93,6 +93,7 @@ module "vpc_dev" {
 
 <img width="600" height="679" alt="image" src="https://github.com/user-attachments/assets/f2ff84d5-58b3-4904-80eb-f8734b047ac7" />
 
+[module.vpc_dev](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_3/module.vpc_dev)
 
 ### Задание 3
 1. Выведите список ресурсов в стейте.
