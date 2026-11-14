@@ -165,7 +165,9 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 
 <img width="889" height="292" alt="image" src="https://github.com/user-attachments/assets/cc97291d-5186-4a99-bbf6-1ead00653a23" />
 
+<img width="788" height="597" alt="image" src="https://github.com/user-attachments/assets/a656691f-990d-4c28-9391-973d2820e908" />
 
+[for.tftpl в ветке terraform-03](https://github.com/IvanChet-4/DevOps_ext/blob/terraform-03/Module_16/L_2/Z4/for.tftpl)
 
 ------
 
