@@ -110,7 +110,8 @@ module "vpc_dev" {
 
 ``` terraform state list ```
 
-<img width="571" height="227" alt="image" src="https://github.com/user-attachments/assets/4199a3b5-4c46-4694-91b0-9a5afef0969f" />
+<img width="574" height="230" alt="image" src="https://github.com/user-attachments/assets/58afe5c8-8836-4ac4-82b5-1cf26640d060" />
+
 
 ```
 yc vpc network list
@@ -118,40 +119,50 @@ yc vpc subnet list
 yc compute instance list
 ```
 
-<img width="1263" height="507" alt="image" src="https://github.com/user-attachments/assets/65e663d3-5413-469a-a401-5ce07b454f86" />
-
-``` terraform state rm module.vpc_dev ```
-
-<img width="647" height="95" alt="image" src="https://github.com/user-attachments/assets/e43fdd8c-4984-44c8-bc56-73dde7951ee9" />
+<img width="1267" height="509" alt="image" src="https://github.com/user-attachments/assets/6e56ce07-ca31-4811-a32c-47eb21e29623" />
 
 ```
+terraform state rm module.vpc_dev
+terraform state rm module.vpc_prod
 terraform state rm module.marketing_vm
 terraform state rm module.analytics_vm
 ```
 
-<img width="686" height="184" alt="image" src="https://github.com/user-attachments/assets/d718829f-7983-4edd-9470-186780b55ff3" />
+<img width="695" height="372" alt="image" src="https://github.com/user-attachments/assets/8f4ab4e7-1a4f-47c9-8b29-6c134270e95d" />
+
 
 ``` terraform state list ```
 
-<img width="491" height="96" alt="image" src="https://github.com/user-attachments/assets/9579b238-1bed-4dc1-bc39-cd903689d517" />
+<img width="491" height="59" alt="image" src="https://github.com/user-attachments/assets/86de8b89-8415-4776-a22e-76b2618e6ba1" />
 
 
-``` terraform import module.vpc_dev.yandex_vpc_network.network enpj51lg27clc2gbg7hu ```
+``` 
+terraform import module.vpc_dev.yandex_vpc_network.network enppqpvk1us6ukvm1bak
+terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bfpq0mp4bl0hbrn1o6
+terraform import module.vpc_prod.yandex_vpc_network.network enpqhbr0rc5m1jpr7c71
+terraform import module.vpc_prod.yandex_vpc_subnet.subnet ajcqo12a96n23ss4idc1
+```
 
-<img width="1238" height="229" alt="image" src="https://github.com/user-attachments/assets/ea40d519-a2ce-4193-b2c3-dfb2e6c331cc" />
-
-
-``` terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9br8hhkgg1eiultepvf ```
-
-<img width="1253" height="187" alt="image" src="https://github.com/user-attachments/assets/8f5a4dd9-f99f-4cf8-a319-f376f7796360" />
+<img width="1115" height="315" alt="image" src="https://github.com/user-attachments/assets/5a06ddd9-b919-4e60-9117-88f7a0a63707" />
 
 ```
-terraform import module.vpc_prod.yandex_vpc_network.network enpd7s7jeb5ip4h2g7hh 
-terraform import module.vpc_prod.yandex_vpc_subnet.subnet ajc1goot4kv96e05gu1c
 terraform state list
 ```
 
-<img width="595" height="193" alt="image" src="https://github.com/user-attachments/assets/b15b6230-1741-4cbc-9ac3-eae685771892" />
+<img width="585" height="186" alt="image" src="https://github.com/user-attachments/assets/889533c9-8b3d-4f5f-b4b4-19a158a0098a" />
+
+```
+terraform import 'module.marketing_vm.yandex_compute_instance.vm[0]' fhmcvr6ou2bgmod4ubhv
+terraform import 'module.analytics_vm.yandex_compute_instance.vm[0]' bg0nlc8opitiqlihtnhl
+```
+
+<img width="1090" height="280" alt="image" src="https://github.com/user-attachments/assets/cb7692fe-9933-4351-8c42-62142149d883" />
+
+```
+terraform state list
+```
+
+<img width="581" height="233" alt="image" src="https://github.com/user-attachments/assets/6eed3eed-d0d4-4684-9204-7148f1d839ef" />
 
 
 ## Дополнительные задания (со звёздочкой*)
