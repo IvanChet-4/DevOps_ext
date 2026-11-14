@@ -36,6 +36,21 @@
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**. 
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://library.tf/providers/kreuzwerker/docker/latest).  (ищите в классификаторе resource docker_image )
 
+### Решение:
+
+Скачайте и установите **Terraform** версии >=1.12.0 . Приложите скриншот вывода команды ```terraform --version```  
+  
+<img width="443" height="68" alt="image" src="https://github.com/user-attachments/assets/6067436e-0c61-4261-95f0-c94c96a2a795" />  
+   
+Скачайте на свой ПК этот git-репозиторий. Исходный код для выполнения задания расположен в директории **01/src**.  
+  
+<img width="577" height="71" alt="image" src="https://github.com/user-attachments/assets/12a19bd3-2b95-434b-8482-29eed8cf7d82" />  
+  
+Убедитесь, что в вашей ОС установлен docker.  
+
+<img width="465" height="92" alt="image" src="https://github.com/user-attachments/assets/db6ad417-7ec8-48c6-85a1-b0ebb88b8a7c" />
+
+1. 
 
 ------
 
