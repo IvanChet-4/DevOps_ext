@@ -136,6 +136,24 @@ terraform state rm module.analytics_vm
 <img width="491" height="96" alt="image" src="https://github.com/user-attachments/assets/9579b238-1bed-4dc1-bc39-cd903689d517" />
 
 
+``` terraform import module.vpc_dev.yandex_vpc_network.network enpj51lg27clc2gbg7hu ```
+
+<img width="1238" height="229" alt="image" src="https://github.com/user-attachments/assets/ea40d519-a2ce-4193-b2c3-dfb2e6c331cc" />
+
+
+``` terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9br8hhkgg1eiultepvf ```
+
+<img width="1253" height="187" alt="image" src="https://github.com/user-attachments/assets/8f5a4dd9-f99f-4cf8-a319-f376f7796360" />
+
+```
+terraform import module.vpc_prod.yandex_vpc_network.network enpd7s7jeb5ip4h2g7hh 
+terraform import module.vpc_prod.yandex_vpc_subnet.subnet ajc1goot4kv96e05gu1c
+terraform state list
+```
+
+<img width="595" height="193" alt="image" src="https://github.com/user-attachments/assets/b15b6230-1741-4cbc-9ac3-eae685771892" />
+
+
 ## Дополнительные задания (со звёздочкой*)
 
 **Настоятельно рекомендуем выполнять все задания со звёздочкой.**   Они помогут глубже разобраться в материале.   
