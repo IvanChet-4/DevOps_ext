@@ -30,6 +30,37 @@
 В случае использования MacOS вы получите ошибку "Incompatible provider version" . В этом случае скачайте remote модуль локально и поправьте в нем версию template провайдера на более старую.
 ------
 
+### Решение:
+
+<img width="1080" height="585" alt="image" src="https://github.com/user-attachments/assets/b89ac3c8-8ffd-4a1c-bbf6-dca04efc7884" />
+
+<img width="1424" height="534" alt="image" src="https://github.com/user-attachments/assets/8e247997-f4aa-48d7-9393-8578758ac765" />
+
+<img width="1835" height="337" alt="image" src="https://github.com/user-attachments/assets/12d0417d-b439-4f88-b886-5f14553ea0fc" />
+
+``` ssh -i ~/.ssh/id_rsa ubuntu@153.51.114.36 ```
+
+<img width="1691" height="868" alt="image" src="https://github.com/user-attachments/assets/e1015812-6460-43f2-aa2f-14e80867a3ea" />
+
+<img width="694" height="82" alt="image" src="https://github.com/user-attachments/assets/2bf0ac84-c602-4d82-a636-4366daf500bf" />
+
+
+``` ssh -i ~/.ssh/id_rsa ubuntu@84.201.133.13 ```
+
+<img width="718" height="876" alt="image" src="https://github.com/user-attachments/assets/f0e6a3f8-1ce3-4a80-aefd-bf93f5113b59" />
+
+
+``` 
+terraform console
+module.marketing_vm
+```
+
+<img width="1155" height="842" alt="image" src="https://github.com/user-attachments/assets/c3b47c9e-b30a-4946-a28e-a7d0a7effca4" />
+
+<img width="656" height="880" alt="image" src="https://github.com/user-attachments/assets/57c9b4b5-e9ea-4c08-be47-84e75dc17170" />
+
+
+
 ### Задание 2
 
 1. Напишите локальный модуль vpc, который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля, например: ```ru-central1-a```.
