@@ -83,6 +83,11 @@ module "vpc_dev" {
   cidr = "10.0.1.0/24"
 }
 ```
+### Решение:
+
+<img width="889" height="45" alt="image" src="https://github.com/user-attachments/assets/2ee01b2d-060b-43bc-9a30-6890b092e567" />
+
+
 
 ### Задание 3
 1. Выведите список ресурсов в стейте.
