@@ -114,6 +114,12 @@ Error: Error while waiting operation to create instance: operation (id=fhmj4bvgm
 1. Создайте 3 одинаковых виртуальных диска размером 1 Гб с помощью ресурса yandex_compute_disk и мета-аргумента count в файле **disk_vm.tf** .
 2. Создайте в том же файле **одиночную**(использовать count или for_each запрещено из-за задания №4) ВМ c именем "storage"  . Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
 
+
+<img width="1293" height="191" alt="image" src="https://github.com/user-attachments/assets/3b43b27f-d602-465b-9b6a-dd8be68a9c0d" />
+
+<img width="1706" height="389" alt="image" src="https://github.com/user-attachments/assets/d0c588ae-06dc-4d84-8563-5bfa1c46808f" />
+
+
 ------
 
 ### Задание 4
