@@ -87,18 +87,15 @@ variable "each_vm" {
 
 ### Решение:
 
-Error: Error while waiting operation to create instance: operation (id=fhmdic13cpoj2ad12bae) failed: rpc error: code = ResourceExhausted desc = The limit on total size of network-hdd disks has exceeded for zone "ru-central1-a".
-│ 
-│   with yandex_compute_instance.db["main"],
-│   on for_each-vm.tf line 1, in resource "yandex_compute_instance" "db":
-│    1: resource "yandex_compute_instance" "db" {
-│ 
-╵
-<img width="1373" height="518" alt="image" src="https://github.com/user-attachments/assets/0230f05e-d04b-4c71-927c-6e8a33552152" />
+Error: Error while waiting operation to create instance: operation (id=fhmj4bvgmtp6lfei3pnk) failed: rpc error: code = ResourceExhausted desc = The limit on total size of network-hdd disks has exceeded for zone "ru-central1-a".
 
-<img width="1164" height="311" alt="image" src="https://github.com/user-attachments/assets/23eba1a6-ee40-4db5-b9a3-535eb2c3c28d" />
+<img width="1871" height="597" alt="image" src="https://github.com/user-attachments/assets/25fc01a2-7c3b-4684-aa6f-866b03028a95" />
 
-<img width="353" height="91" alt="image" src="https://github.com/user-attachments/assets/0ad1667a-2535-48b8-a163-c5cbd4ae39d8" />
+<img width="1390" height="532" alt="image" src="https://github.com/user-attachments/assets/8d5dcf09-7d90-4047-8e45-3979c5e5104e" />
+
+<img width="1817" height="323" alt="image" src="https://github.com/user-attachments/assets/af4748e0-b149-4fbb-8e46-2aa65a7e178f" />
+
+<img width="345" height="105" alt="image" src="https://github.com/user-attachments/assets/4197f178-8522-4e19-b340-182ada7cc47f" />
 
 
 ------
