@@ -109,6 +109,7 @@ Error: Error while waiting operation to create instance: operation (id=fhmj4bvgm
 Запрос на квоты повис:  
 <img width="797" height="509" alt="image" src="https://github.com/user-attachments/assets/24b8fdb5-b44e-4284-92bf-0996864f25a0" />
 
+см. скриншоты задания 4, запущено. 
 
 ------
 
