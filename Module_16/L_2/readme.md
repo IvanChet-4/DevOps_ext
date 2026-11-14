@@ -87,7 +87,16 @@ variable "each_vm" {
 
 ### Решение:
 
-Error: Error while waiting operation to create instance: operation (id=fhmj4bvgmtp6lfei3pnk) failed: rpc error: code = ResourceExhausted desc = The limit on total size of network-hdd disks has exceeded for zone "ru-central1-a".
+Создал файлы:  
+[count-vm.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_2/count-vm.tf)  
+[for_each-vm.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_2/for_each-vm.tf)  
+[each_vm.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_2/each_vm.tf)  
+
+При запуске сталкиваюсь с проблемой лимита по hdd. Одна ВМ создается.  
+  
+Получаю ошибку связанную с ограничением по дисковому пространству:  
+
+Error: Error while waiting operation to create instance: operation (id=fhmj4bvgmtp6lfei3pnk) failed: rpc error: code = ResourceExhausted desc = The limit on total size of network-hdd disks has exceeded for zone "ru-central1-a".  
 
 <img width="1871" height="597" alt="image" src="https://github.com/user-attachments/assets/25fc01a2-7c3b-4684-aa6f-866b03028a95" />
 
