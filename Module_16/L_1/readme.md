@@ -57,7 +57,10 @@
 <img width="1418" height="648" alt="image" src="https://github.com/user-attachments/assets/670c354f-a2e6-463d-95d4-712521d0d8c8" />
 <img width="914" height="465" alt="image" src="https://github.com/user-attachments/assets/92739511-0fd1-4b76-8708-bfaeb7a80d0f" />
 В state-файле секретное содержимое созданного ресурса **random_password** имеет следующий ключ и значение:  
-```"result": "f1SQKsXNJm0SqjgF",```  
+```"result": "f1SQKsXNJm0SqjgF",```
+4. Раскомментировал строчки и выполнил команду  ```terraform validate```:
+<img width="1118" height="364" alt="image" src="https://github.com/user-attachments/assets/3402dfd2-81d7-4807-9820-73f80d36d772" />
+
 
 ------
 
