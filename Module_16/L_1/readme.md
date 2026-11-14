@@ -55,7 +55,9 @@
 3. Для запуска ```terraform apply -auto-approve``` пришлось поменять ограничение версии с ~> на >= :  
 <img width="1613" height="795" alt="image" src="https://github.com/user-attachments/assets/00e07ae6-b487-4942-80e4-1c0b194cc8e7" />
 <img width="1418" height="648" alt="image" src="https://github.com/user-attachments/assets/670c354f-a2e6-463d-95d4-712521d0d8c8" />
-
+<img width="914" height="465" alt="image" src="https://github.com/user-attachments/assets/92739511-0fd1-4b76-8708-bfaeb7a80d0f" />
+В state-файле секретное содержимое созданного ресурса **random_password** имеет следующий ключ и значение:  
+```"result": "f1SQKsXNJm0SqjgF",```  
 
 ------
 
