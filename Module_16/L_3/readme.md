@@ -89,6 +89,10 @@ module "vpc_dev" {
 
 [terraform-doc.md](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_3/terraform-doc.md)
 
+<img width="1149" height="254" alt="image" src="https://github.com/user-attachments/assets/a6bf6d2d-52c7-4eed-a021-fa208c0540a9" />
+
+<img width="600" height="679" alt="image" src="https://github.com/user-attachments/assets/f2ff84d5-58b3-4904-80eb-f8734b047ac7" />
+
 
 ### Задание 3
 1. Выведите список ресурсов в стейте.
