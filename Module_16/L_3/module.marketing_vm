@@ -1,0 +1,164 @@
+{
+  "all" = [
+    {
+      "allow_recreate" = tobool(null)
+      "allow_stopping_for_update" = true
+      "boot_disk" = tolist([
+        {
+          "auto_delete" = true
+          "device_name" = "fhmvg6u5fbc75k2csed8"
+          "disk_id" = "fhmvg6u5fbc75k2csed8"
+          "initialize_params" = tolist([
+            {
+              "block_size" = 4096
+              "description" = ""
+              "image_id" = "fd84np9sg3hrgaoisfnj"
+              "kms_key_id" = ""
+              "name" = ""
+              "size" = 10
+              "snapshot_id" = ""
+              "type" = "network-hdd"
+            },
+          ])
+          "mode" = "READ_WRITE"
+        },
+      ])
+      "created_at" = "2026-11-14T21:03:12Z"
+      "description" = "TODO: description; {{terraform yyy managed}}"
+      "filesystem" = toset([])
+      "folder_id" = "b1gmhmiqb0k99p8qgqa0"
+      "fqdn" = "marketing-webs-0.ru-central1.internal"
+      "gpu_cluster_id" = ""
+      "hardware_generation" = tolist([
+        {
+          "generation2_features" = tolist([])
+          "legacy_features" = tolist([
+            {
+              "pci_topology" = "PCI_TOPOLOGY_V2"
+            },
+          ])
+        },
+      ])
+      "hostname" = "marketing-webs-0"
+      "id" = "fhmhg63clod1l9km885g"
+      "labels" = tomap({
+        "owner" = "i.ivanov"
+        "project" = "marketing"
+      })
+      "local_disk" = tolist([])
+      "maintenance_grace_period" = ""
+      "maintenance_policy" = tostring(null)
+      "metadata" = tomap({
+        "serial-port-enable" = "1"
+        "user-data" = <<-EOT
+        #cloud-config
+        users:
+          - name: ubuntu
+            groups: sudo
+            shell: /bin/bash
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+            ssh-authorized-keys:
+
+        
+        package_update: true
+        package_upgrade: false
+        packages:
+          - nginx
+        
+        EOT
+      })
+      "metadata_options" = tolist([
+        {
+          "aws_v1_http_endpoint" = 1
+          "aws_v1_http_token" = 2
+          "aws_v2_http_endpoint" = 1
+          "aws_v2_http_token" = 1
+          "gce_http_endpoint" = 1
+          "gce_http_token" = 1
+        },
+      ])
+      "name" = "marketing-webs-0"
+      "network_acceleration_type" = "standard"
+      "network_interface" = tolist([
+        {
+          "dns_record" = tolist([])
+          "index" = 0
+          "ip_address" = "10.0.1.15"
+          "ipv4" = true
+          "ipv6" = false
+          "ipv6_address" = ""
+          "ipv6_dns_record" = tolist([])
+          "mac_address" = "d0:0d:11:81:86:ca"
+          "nat" = true
+          "nat_dns_record" = tolist([])
+          "nat_ip_address" = "84.201.133.13"
+          "nat_ip_version" = "IPV4"
+          "security_group_ids" = toset(null) /* of string */
+          "subnet_id" = "e9br9ciki0s87qa89iii"
+        },
+      ])
+      "placement_policy" = tolist([
+        {
+          "host_affinity_rules" = tolist([])
+          "placement_group_id" = ""
+          "placement_group_partition" = 0
+        },
+      ])
+      "platform_id" = "standard-v3"
+      "reserved_instance_pool_id" = ""
+      "resources" = tolist([
+        {
+          "core_fraction" = 20
+          "cores" = 2
+          "gpus" = 0
+          "memory" = 1
+        },
+      ])
+      "scheduling_policy" = tolist([
+        {
+          "preemptible" = true
+        },
+      ])
+      "secondary_disk" = toset([])
+      "service_account_id" = ""
+      "status" = "running"
+      "timeouts" = null /* object */
+      "zone" = "ru-central1-a"
+    },
+  ]
+  "external_ip_address" = [
+    "84.201.133.13",
+  ]
+  "fqdn" = [
+    "marketing-webs-0.ru-central1.internal",
+  ]
+  "internal_ip_address" = [
+    "10.0.1.15",
+  ]
+  "labels" = [
+    tomap({
+      "owner" = "i.ivanov"
+      "project" = "marketing"
+    }),
+  ]
+  "network_interface" = [
+    tolist([
+      {
+        "dns_record" = tolist([])
+        "index" = 0
+        "ip_address" = "10.0.1.15"
+        "ipv4" = true
+        "ipv6" = false
+        "ipv6_address" = ""
+        "ipv6_dns_record" = tolist([])
+        "mac_address" = "d0:0d:11:81:86:ca"
+        "nat" = true
+        "nat_dns_record" = tolist([])
+        "nat_ip_address" = "84.201.133.13"
+        "nat_ip_version" = "IPV4"
+        "security_group_ids" = toset(null) /* of string */
+        "subnet_id" = "e9br9ciki0s87qa89iii"
+      },
+    ]),
+  ]
+}
