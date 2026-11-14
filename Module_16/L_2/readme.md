@@ -84,6 +84,23 @@ variable "each_vm" {
 4. Используйте функцию file в local-переменной для считывания ключа ~/.ssh/id_rsa.pub и его последующего использования в блоке metadata, взятому из ДЗ 2.
 5. Инициализируйте проект, выполните код.
 
+
+### Решение:
+
+Error: Error while waiting operation to create instance: operation (id=fhmdic13cpoj2ad12bae) failed: rpc error: code = ResourceExhausted desc = The limit on total size of network-hdd disks has exceeded for zone "ru-central1-a".
+│ 
+│   with yandex_compute_instance.db["main"],
+│   on for_each-vm.tf line 1, in resource "yandex_compute_instance" "db":
+│    1: resource "yandex_compute_instance" "db" {
+│ 
+╵
+<img width="1373" height="518" alt="image" src="https://github.com/user-attachments/assets/0230f05e-d04b-4c71-927c-6e8a33552152" />
+
+<img width="1164" height="311" alt="image" src="https://github.com/user-attachments/assets/23eba1a6-ee40-4db5-b9a3-535eb2c3c28d" />
+
+<img width="353" height="91" alt="image" src="https://github.com/user-attachments/assets/0ad1667a-2535-48b8-a163-c5cbd4ae39d8" />
+
+
 ------
 
 ### Задание 3
