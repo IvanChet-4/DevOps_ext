@@ -79,6 +79,18 @@
 5. Исправил main.tf и выполнил:   
 <img width="1454" height="275" alt="image" src="https://github.com/user-attachments/assets/c2ab0d65-96b8-4717-981f-38da14329040" />
 
+6. Исправил main.tf и запустил :
+
+```
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "hello_world"
+```
+
+<img width="1303" height="242" alt="image" src="https://github.com/user-attachments/assets/3b8a6ab8-a295-4a0f-a47f-ee0c8d61245a" />
+
+
+
 ------
 
 ## Дополнительное задание (со звёздочкой*)
