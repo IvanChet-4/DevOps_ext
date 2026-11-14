@@ -59,7 +59,7 @@ module.marketing_vm
 
 <img width="656" height="880" alt="image" src="https://github.com/user-attachments/assets/57c9b4b5-e9ea-4c08-be47-84e75dc17170" />
 
-
+[Вывод module.marketing_vm без ключей](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_3/module.marketing_vm)
 
 ### Задание 2
 
