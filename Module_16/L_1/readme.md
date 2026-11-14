@@ -52,8 +52,9 @@
 
 1. Скачено  
 2. Согласно предоставленному .gitignore, личную и секретную информацию допустимо сохранить в файле personal.auto.tfvars. В конце .gitignore для него прописано специальное правило игнорирования, благодаря чему файл не попадет в Git-репозиторий, а расширение .auto.tfvars позволит Terraform подгружать переменные из него автоматически.  
-3. Для запуска пришлось поменять ограничение версии с ~> на >=:  
+3. Для запуска ```terraform apply -auto-approve``` пришлось поменять ограничение версии с ~> на >= :  
 <img width="1613" height="795" alt="image" src="https://github.com/user-attachments/assets/00e07ae6-b487-4942-80e4-1c0b194cc8e7" />
+<img width="1418" height="648" alt="image" src="https://github.com/user-attachments/assets/670c354f-a2e6-463d-95d4-712521d0d8c8" />
 
 
 ------
