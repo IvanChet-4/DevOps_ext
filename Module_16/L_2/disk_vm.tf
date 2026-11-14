@@ -3,7 +3,7 @@ resource "yandex_compute_disk" "storage_disks" {
   count = 3
 
   name = "storage-disk-${count.index + 1}"
-  type = "network-ssd" 
+  type = "network-hdd" 
   zone = var.default_zone 
   size = 1
 }
@@ -24,7 +24,7 @@ resource "yandex_compute_instance" "storage" {
     initialize_params {
       image_id = "fd87v9u6g814jeosoe8v"
       size     = 10
-      type     = "network-ssd"
+      type     = "network-hdd"
     }
   }
 
