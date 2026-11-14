@@ -87,6 +87,7 @@ module "vpc_dev" {
 
 <img width="889" height="45" alt="image" src="https://github.com/user-attachments/assets/2ee01b2d-060b-43bc-9a30-6890b092e567" />
 
+[terraform-doc.md](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_3/terraform-doc.md)
 
 
 ### Задание 3
