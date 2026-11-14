@@ -91,9 +91,25 @@ resource "docker_container" "nginx" {
 
 7.  Выполнил команду ``` terraform destroy ``` :  
 
-<img width="738" height="258" alt="image" src="https://github.com/user-attachments/assets/aa90dced-0d02-45ee-b747-f6a29f027abb" />
+<img width="738" height="258" alt="image" src="https://github.com/user-attachments/assets/aa90dced-0d02-45ee-b747-f6a29f027abb" />  
+  
+Содержимое файла: [terraform.tfstate](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_1/terraform.tfstate)  
 
-[terraform.tfstate](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_1/terraform.tfstate)
+8. Образ nginx:latest не был удален при выполнении terraform destroy, потому что в блоке ресурса docker_image задан параметр keep_locally = true   
+
+В main.tf:  
+
+```
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+```
+
+По [документации](https://library.tf/providers/kreuzwerker/docker/latest/docs/resources/image)  
+
+<img width="947" height="115" alt="image" src="https://github.com/user-attachments/assets/9716cb88-9eea-443e-bb0f-83a3e3f673bf" />  
+
 
 ------
 
