@@ -29,6 +29,24 @@
 
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud .
 
+### Решение:
+
+1. Зарегистрирован аккаунт в Yandex Cloud. Использован промокод на грант.  
+
+<img width="1053" height="413" alt="image" src="https://github.com/user-attachments/assets/9b8dc114-08af-4ac2-ad21-9d9968fc6c91" />
+
+2. Установлен инструмент Yandex CLI.  
+
+<img width="381" height="52" alt="image" src="https://github.com/user-attachments/assets/1e18d72c-9b18-45e8-ae62-788d81d43f8b" />
+
+3. Код проекта скопирован  
+
+<img width="717" height="185" alt="image" src="https://github.com/user-attachments/assets/cf8940d0-949a-44a0-b4bc-5f0e53f79d57" />  
+
+4. Любые ВМ, использованные при выполнении задания, должны быть прерываемыми, для экономии средств.  
+Учтено  
+
+
 ------
 
 ### Задание 2
