@@ -106,6 +106,36 @@ module "vpc_dev" {
 4. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
 Приложите список выполненных команд и скриншоты процессы.
 
+### Решение:
+
+``` terraform state list ```
+
+<img width="571" height="227" alt="image" src="https://github.com/user-attachments/assets/4199a3b5-4c46-4694-91b0-9a5afef0969f" />
+
+```
+yc vpc network list
+yc vpc subnet list
+yc compute instance list
+```
+
+<img width="1263" height="507" alt="image" src="https://github.com/user-attachments/assets/65e663d3-5413-469a-a401-5ce07b454f86" />
+
+``` terraform state rm module.vpc_dev ```
+
+<img width="647" height="95" alt="image" src="https://github.com/user-attachments/assets/e43fdd8c-4984-44c8-bc56-73dde7951ee9" />
+
+```
+terraform state rm module.marketing_vm
+terraform state rm module.analytics_vm
+```
+
+<img width="686" height="184" alt="image" src="https://github.com/user-attachments/assets/d718829f-7983-4edd-9470-186780b55ff3" />
+
+``` terraform state list ```
+
+<img width="491" height="96" alt="image" src="https://github.com/user-attachments/assets/9579b238-1bed-4dc1-bc39-cd903689d517" />
+
+
 ## Дополнительные задания (со звёздочкой*)
 
 **Настоятельно рекомендуем выполнять все задания со звёздочкой.**   Они помогут глубже разобраться в материале.   
