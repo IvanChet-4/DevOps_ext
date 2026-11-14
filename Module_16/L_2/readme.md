@@ -114,11 +114,13 @@ Error: Error while waiting operation to create instance: operation (id=fhmj4bvgm
 1. Создайте 3 одинаковых виртуальных диска размером 1 Гб с помощью ресурса yandex_compute_disk и мета-аргумента count в файле **disk_vm.tf** .
 2. Создайте в том же файле **одиночную**(использовать count или for_each запрещено из-за задания №4) ВМ c именем "storage"  . Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
 
+[disk_vm.tf](https://github.com/IvanChet-4/DevOps_ext/blob/main/Module_16/L_2/disk_vm.tf)
 
 <img width="1293" height="191" alt="image" src="https://github.com/user-attachments/assets/3b43b27f-d602-465b-9b6a-dd8be68a9c0d" />
 
 <img width="1706" height="389" alt="image" src="https://github.com/user-attachments/assets/d0c588ae-06dc-4d84-8563-5bfa1c46808f" />
 
+Error: Error while requesting API to create instance: x-request-id = 76c4fd7b-7573-4ad4-bcd6-85a09b983c93 x-server-trace-id = 641bb5a4e397eff8:4d8c8bf6cf7b2a93:dcaad176d96c5740:1 x-client-trace-id = ba28a9f9-b190-4354-9bbd-598df96baa98 rpc error: code = ResourceExhausted desc = The limit on total size of network-ssd disks has exceeded for zone "ru-central1-d".
 
 ------
 
