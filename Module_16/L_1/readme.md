@@ -89,6 +89,9 @@ resource "docker_container" "nginx" {
 
 <img width="1303" height="242" alt="image" src="https://github.com/user-attachments/assets/3b8a6ab8-a295-4a0f-a47f-ee0c8d61245a" />
 
+7.  Выполнил команду ``` terraform destroy ``` :  
+
+<img width="738" height="258" alt="image" src="https://github.com/user-attachments/assets/aa90dced-0d02-45ee-b747-f6a29f027abb" />
 
 
 ------
