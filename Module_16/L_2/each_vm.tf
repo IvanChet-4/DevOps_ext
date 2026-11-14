@@ -7,13 +7,13 @@ variable "each_vm" {
   }))
   default = [
     {
-      vm_name     = "web-1"
+      vm_name     = "main"
       cpu         = 2
       ram         = 2
       disk_volume = 10
     },
     {
-      vm_name     = "web-2"
+      vm_name     = "replica"
       cpu         = 2
       ram         = 2
       disk_volume = 10
