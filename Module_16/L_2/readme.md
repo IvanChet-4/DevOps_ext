@@ -153,6 +153,16 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 Для общего зачёта создайте в вашем GitHub-репозитории новую ветку terraform-03. Закоммитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит.   
 **Удалите все созданные ресурсы**.
 
+### Решение:
+
+<img width="1116" height="815" alt="image" src="https://github.com/user-attachments/assets/5546d76a-f8cd-47e7-8f58-ec7c0e628a01" />
+
+<img width="1775" height="542" alt="image" src="https://github.com/user-attachments/assets/3582c76d-8270-4c55-965f-eeed4acc416e" />
+
+
+
+
+
 ------
 
 ## Дополнительные задания (со звездочкой*)
