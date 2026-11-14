@@ -54,23 +54,27 @@
    
 2. Согласно предоставленному .gitignore, личную и секретную информацию допустимо сохранить в файле personal.auto.tfvars. В конце .gitignore для него прописано специальное правило игнорирования, благодаря чему файл не попадет в Git-репозиторий, а расширение .auto.tfvars позволит Terraform подгружать переменные из него автоматически.
 
-3. Для запуска ```terraform apply -auto-approve``` пришлось поменять ограничение версии с ~> на >= :   
+3. Для запуска ``` terraform apply -auto-approve ``` пришлось поменять ограничение версии с ~> на >= :   
 <img width="1613" height="795" alt="image" src="https://github.com/user-attachments/assets/00e07ae6-b487-4942-80e4-1c0b194cc8e7" />
 <img width="1418" height="648" alt="image" src="https://github.com/user-attachments/assets/670c354f-a2e6-463d-95d4-712521d0d8c8" />
 <img width="914" height="465" alt="image" src="https://github.com/user-attachments/assets/92739511-0fd1-4b76-8708-bfaeb7a80d0f" />
 В state-файле секретное содержимое созданного ресурса **random_password** имеет следующий ключ и значение:  
 ``` "result": "f1SQKsXNJm0SqjgF" ```  
+
 <br>
 
-4. Раскомментировал строчки и выполнил команду  ```terraform validate``` :   
+4. Раскомментировал строчки и выполнил команду  ``` terraform validate ``` :
+
 <img width="1118" height="364" alt="image" src="https://github.com/user-attachments/assets/3402dfd2-81d7-4807-9820-73f80d36d772" />
 <br>
 
+```
 Причины ошибок:  
 1) Пропущено имя ресурса docker_image (строка 22). У каждого ресурса должно быть два параметра: тип и локальное имя. Ниже по коду к нему обращаются как docker_image.nginx, значит, имя должно быть "nginx".  
 2) Некорректное имя ресурса "1nginx" (строка 27). В Terraform имена ресурсов не могут начинаться с цифры. Нужно заменить на "nginx".  
 3) Неверное имя ресурса в интерполяции (строка 29). В коде указано random_string_FAKE, хотя выше ресурс объявлен как random_string.  
 4) Опечатка в регистре атрибута resulT (строка 29). Регистр в Terraform имеет значение — правильно писать result. 
+```
   
 5. Исправил main.tf и выполнил:   
 <img width="1454" height="275" alt="image" src="https://github.com/user-attachments/assets/c2ab0d65-96b8-4717-981f-38da14329040" />
