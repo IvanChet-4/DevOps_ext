@@ -1,13 +1,13 @@
 resource "yandex_compute_instance" "web" {
-  count = 2
+  count = var.web_count
 
   name        = "web-${count.index + 1}"
-  platform_id = "standard-v3"
+  platform_id = var.web_platform_id
 
   resources {
-    cores         = 2
-    memory        = 1
-    core_fraction = 20
+    cores         = var.web_resources.cores
+    memory        = var.web_resources.memory
+    core_fraction = var.web_resources.core_fraction
   }
 
   boot_disk {
@@ -23,10 +23,9 @@ resource "yandex_compute_instance" "web" {
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
 
-  metadata = {
-    serial-port-enable = 1
+  metadata = merge(var.vms_metadata, {
     ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
-  }
+  })
 
   scheduling_policy {
     preemptible = true
