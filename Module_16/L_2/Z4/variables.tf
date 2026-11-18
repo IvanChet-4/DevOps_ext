@@ -30,3 +30,67 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "os_family" {
+  type        = string
+  default     = "ubuntu-2404-lts-oslogin"
+  description = "iso"
+}
+
+variable "web_count" {
+  description = "Количество веб-серверов"
+  type        = number
+  default     = 2
+}
+
+variable "web_platform_id" {
+  description = "Платформа ВМ"
+  type        = string
+  default     = "standard-v3"
+}
+
+variable "web_resources" {
+  description = "Вычислительные ресурсы для веб-серверов"
+  type = object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  })
+  default = {
+    cores         = 2
+    memory        = 1
+    core_fraction = 20
+  }
+}
+
+variable "vms_metadata" {
+  description = "Метаданные"
+  type        = map(any)
+  default = {
+    serial-port-enable = 1
+  }
+}
+
+variable "boot_disk_size" {
+  description = "Размер загрузочного диска ВМ в ГБ"
+  type        = number
+  default     = 10
+}
+
+variable "storage_disk_count" {
+  description = "Количество дополнительных виртуальных дисков"
+  type        = number
+  default     = 3
+}
+
+variable "storage_disk_type" {
+  description = "Тип дополнительных виртуальных дисков"
+  type        = string
+  default     = "network-hdd"
+}
+
+variable "storage_disk_size" {
+  description = "Размер каждого дополнительного диска в ГБ"
+  type        = number
+  default     = 1
+}
