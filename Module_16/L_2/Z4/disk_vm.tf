@@ -1,30 +1,30 @@
 # 1. Создание 3 одинаковых виртуальных дисков по 1 ГБ с помощью count
 resource "yandex_compute_disk" "storage_disks" {
-  count = 3
+  count = var.storage_disk_count
 
   name = "storage-disk-${count.index + 1}"
-  type = "network-hdd" 
+  type = var.storage_disk_type
   zone = var.default_zone 
-  size = 1
+  size = var.storage_disk_size
 }
 
 # 2. Создание одиночной ВМ "storage" и динамическое подключение дисков
 resource "yandex_compute_instance" "storage" {
   name        = "storage"
-  platform_id = "standard-v3"
+  platform_id = var.web_platform_id
   zone        = var.default_zone
 
   resources {
-    cores         = 2
-    memory        = 1
-    core_fraction = 50
+    cores         = var.web_resources.cores
+    memory        = var.web_resources.memory
+    core_fraction = var.web_resources.core_fraction
   }
 
   boot_disk {
     initialize_params {
-      image_id = "fd87v9u6g814jeosoe8v"
-      size     = 10
-      type     = "network-hdd"
+      image_id = data.yandex_compute_image.os_image.id
+      size     = var.boot_disk_size
+      type     = var.storage_disk_type
     }
   }
 
@@ -41,10 +41,9 @@ resource "yandex_compute_instance" "storage" {
     nat       = true
   }
 
-  metadata = {
-    serial-port-enable = 1
+  metadata = merge(var.vms_metadata, {
     ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
-  }
+  })
 
   scheduling_policy {
     preemptible = true
