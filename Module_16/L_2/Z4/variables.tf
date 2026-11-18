@@ -94,3 +94,9 @@ variable "storage_disk_size" {
   type        = number
   default     = 1
 }
+
+variable "vm_core_fraction" {
+  description = "Гарантированная доля vCPU в процентах"
+  type        = number
+  default     = 20
+}
