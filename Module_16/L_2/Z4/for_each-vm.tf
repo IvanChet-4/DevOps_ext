@@ -2,18 +2,18 @@ resource "yandex_compute_instance" "db" {
   for_each = { for vm in var.each_vm : vm.vm_name => vm }
 
   name        = each.value.vm_name
-  platform_id = "standard-v3" # или standard-v1 / standard-v2
+  platform_id = var.web_platform_id
 
   resources {
     cores         = each.value.cpu
     memory        = each.value.ram
-    core_fraction = 20 # прерываемая/базовая доля для экономии гранта
+    core_fraction = var.vm_core_fraction
   }
 
   boot_disk {
     initialize_params {
-      image_id = "fd87v9u6g814jeosoe8v"
-      size     = 10
+      image_id = data.yandex_compute_image.os_image.id
+      size     = yandex_compute_instance.storage.boot_disk[0].initialize_params[0].size
     }
   }
 
