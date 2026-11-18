@@ -12,8 +12,8 @@ resource "yandex_compute_instance" "web" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd87v9u6g814jeosoe8v"
-      size = 10
+      image_id = data.yandex_compute_image.os_image.id
+      size = yandex_compute_instance.storage.boot_disk[0].initialize_params[0].size
     }
   }
 
